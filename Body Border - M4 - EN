@@ -1,0 +1,35 @@
+<!-- End to End Redesign - Body Border - M4 - EN -->
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" class="stylingblock-content-wrapper" style="min-width: 100%; ">
+  <tbody>
+    <tr>
+      <td class="stylingblock-content-margin-cell" style="padding: 10px; ">
+        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: transparent; border: 2px solid #7F30CE; min-width: 100%; " class="stylingblock-content-wrapper">
+          <tbody>
+            <tr>
+              <td style="padding: 2px; " class="stylingblock-content-wrapper camarker-inner">
+               <table align="center" border="0" cellpadding="0" cellspacing="0" class="w90" role="presentation" width="600">
+                <tbody>
+                  <tr>
+                  <td class="fontbody h2m" style="padding-top: 10px; padding-left: 20px; padding-right: 20px; text-align: left; font-size: 17px; line-height: 1.4em; color: #000000; font-family: Georgia, serif;">
+Medicaid/KCHIP/QHP with APTC:
+                      <ul>
+                          <li>
+                          Go to your benefits page to review your eligibility results today.                           </li>
+                          </li>
+                          <li>
+                          Check your kynect document center for RFIs and upload or return required documents.                          </li>
+                          </li>
+                      </ul>
+                    </td>
+                  </tr>
+                 </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- End to End Redesign - Body Border - M4 - EN -->
