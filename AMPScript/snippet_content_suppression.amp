@@ -1,0 +1,18 @@
+/*
+
+%%[
+
+// Custom Content Suppression
+
+      IF @ALLOW_CUSTOM_CONTENT == FALSE THEN
+// RaiseError and Log Details
+      set @ERROR_TYPE = "Custom Content Suppression"
+      set @ERROR_CATEGORY = "ERROR"
+      set @ERROR_DETAIL = Concat(@SPONSOR_NAME," is not elgible to receive Custom content, and can not be sent ",emailname_,".")
+      ContentBlockByName("Content Builder\Workplace\Scripts\ERROR_LOG_FUNCTION")
+      raiseError(@ERROR_DETAIL,true)
+	  ENDIF
+
+]%%
+
+*/

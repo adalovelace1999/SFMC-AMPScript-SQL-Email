@@ -1,0 +1,23 @@
+/*
+
+%%[
+
+//  ENROLLMENT STATUS CHECK - This check ensures the user is enrolled; otherwise, they will fail the send. 
+
+var @enrollment_state, @member_status
+set @enrollment_state = LowerCase(@ENROLLMENT_STATUS)
+set @member_status = "enrolled"
+
+IF IndexOf(@enrollment_state,@member_status) == 0 THEN
+
+  set @ERROR_CATEGORY = "ERROR"
+  set @ERROR_TYPE = "Enrollment Check"
+  set @ERROR_DETAIL = Concat("User ",@PROFILE_KEY," is not a member and is not eligible for this email with content type ",CONTENT_TYPE)
+  ContentBlockByName("Content Builder\Scripts\INSERT_ERROR_LOG")
+
+  RaiseError(@ERROR_DETAIL, true)
+
+ENDIF
+
+]%%
+*/

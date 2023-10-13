@@ -1,0 +1,21 @@
+/* 
+
+// This code suppresses a few specific users
+
+
+%%[
+
+
+IF @USER_KEY == "13585" OR @USER_KEY == "473930" THEN
+
+  set @ERROR_CATEGORY = "ERROR"
+  set @ERROR_TYPE = "User Suppression"
+  set @ERROR_DETAIL = Concat("User ",@USER_KEY," has not been sent this email")
+  ContentBlockByName("Content Builder\Scripts\_ERROR_LOG_SCRIPT")
+
+  RaiseError(@ERROR_DETAIL, true)
+
+ENDIF
+
+]%%
+ */

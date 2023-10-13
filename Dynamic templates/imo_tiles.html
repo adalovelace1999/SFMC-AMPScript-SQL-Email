@@ -1,0 +1,149 @@
+<!-- imo_tiles -->
+
+%%[
+    VAR @tiles_link_cta
+
+]%%
+
+<!-- TILES FOR ALFA, CHRYSLER, JEEP, RAM RETAIL -->
+
+%%[IF @brand == "a" THEN
+    SET @tiles_link_cta = Concat(@brandsite,'tonale')
+]%%
+<table dir="rtl" width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="email_container" role="presentation" style="background-color: #1c1f2a">
+  <tbody>
+    <tr>
+      <td class="force_col tile_pad" align="center" style="line-height: 0; font-size: 0; padding: 16px 16px 16px 0px"><img role="img" src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_alfa_tile_tonale.jpg" alt="Tonale" width="268" border="0" class="fluid"></td>
+      <td class="force_col" align="center" valign="middle">
+    <table border="0" cellspacing="0" cellpadding="0" role="presentation">
+          <tbody>
+            <tr>
+             <td dir="ltr" align="center" valign="middle" style="padding-bottom:15px;">
+     <img src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_alfa_tile_tonale_header.png" alt="ALL-NEW TONALE" border="0" width="133"></td>
+            </tr>
+            <tr>
+              <td class="alfa_tile_mob" dir="ltr" align="center" valign="top" style="padding: 0px 18px 15px; color: #ffffff; font-size: 11px; line-height: 16px; ms-line-height-rule: exactly;"><font style="font-family: Arial, Helvetica, 'sans-serif';">The newest addition to the Alfa Romeo lineup brings new levels of sophistication and innovation to unmistakeable Italian elegance. Click below to learn more about the <br class="hide">All-New Tonale and sign up to receive&nbsp;updates.</font></td>
+            </tr>
+            <tr>
+              <td align="center" valign="top"><a alias="button_exploretonale" href="%%=RedirectTo(concat(@tiles_link_cta,@queryString,'&cta=button_exploretonale'))=%%" target="_blank"><img src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_alfa_tile_cta_r2.jpg" alt="EXPLORE TONALE" border="0" width="182"></a></td>
+            </tr>
+          </tbody>
+        </table></td>
+    </tr>
+      <tr>
+          <td class="top_30" dir="ltr" colspan="2" align="center" valign="middle" style="color: #ffffff; font-size: 11px; line-height: 14px; ms-line-height-rule: exactly; padding: 0 30px 15px"><font style="font-family: Arial, Helvetica, 'sans-serif';">Available Spring 2023. Excluded From Offer.</font> </td>
+      </tr>
+      <tr>
+          <td colspan="2" align="center" valign="top" style="border-top: 1px solid #ffffff"></td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+%%[ELSEIF @brand == "j" THEN
+
+IF [C_CREATV_VERSN] == "CA182" OR [C_CREATV_VERSN] == "CA334" THEN
+
+    SET @tiles_link_cta = Concat(@brandsite,'4xe/incentives/hybrid-incentives.html')
+]%%
+<table dir="ltr" width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="email_container bottom_border" role="presentation" style="background-color: #000000;">
+  <tbody>
+    <tr>
+      <td class="force_col" align="center" style="line-height: 0; font-size: 0;">
+        <img role="image" src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_jeep_tile_electric_img.jpg" alt="4XE" width="232" border="0" class="fluid">
+      </td>
+      <td class="force_col" align="center" valign="middle" bgcolor="#000000">
+        <table border="0" cellspacing="0" cellpadding="0" role="presentation" class="center_tile_4xe">
+          <tbody>
+            <tr>
+              <td class="mob_tile_pad_4xe mob_tile_hdl_4xe" dir="ltr" align="left" valign="top" style="padding: 10px 10px 10px 0px; color: #ffffff; font-size: 20px; line-height: 24px; ms-line-height-rule: exactly;"><font style="font-family: Arial, Helvetica, 'sans-serif';">The Best of <span class="break"><strong>Both Worlds</strong></span></font>
+              </td>
+            </tr>
+            <tr>
+              <td class="mob_tile_pad_4xe" dir="ltr" align="left" valign="top" style="padding: 0px 25px 15px 0px; color: #ffffff; font-size: 11px; line-height: 15px; ms-line-height-rule: exactly;"><font style="font-family: Arial, Helvetica, 'sans-serif';">Power your next adventure to incredible heights with Jeep Brand 4xe technology. The hybrid gas and electric powertrain&nbsp;work in tandem to&nbsp;deliver legendary performance and uncompromised capability. Plug&nbsp;into the future of exploration with the Jeep Grand Cherokee 4xe and Jeep Wrangler 4xe&nbsp;vehicles.</font>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" style="text-align: left;padding-bottom:10px;" class="center tile_4xe_cta_pad"><a alias="button_learnmore" href="%%=RedirectTo(concat(@tiles_link_cta,@queryString,'&cta=button_learnmore'))=%%" target="_blank">
+                <img class="hide" src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_jeep_tile_cta.png" alt="LEARN MORE" border="0" width="107">
+                  <!--[if !mso]><!-->
+                  <img class="learncta" src="https://image.e.fcaemail.com/lib/fe2f117170640475751178/m/3/cta_jeep_learn_more_mob.png" border="0" alt="LEARN MORE" style="max-height: 0px; overflow: hidden; display: none;">
+                  <!--<![endif]-->
+              </a></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  %%[ELSE
+
+    SET @tiles_link_cta = Concat(@brandsite,'jeep-wave.html')
+]%%
+    <table dir="ltr" width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="email_container bottom_border" role="presentation" style="background-color: #000000;">
+  <tbody>
+    <tr>
+      <td class="force_col jeep_tile_pad_mob" align="center" valign="top" style="line-height: 0; font-size: 0; padding: 20px 30px 20px 30px"><img role="image" src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_jeep_tile_img.jpg" alt="Jeep Wave&reg; Customer Care" width="158" border="0"></td>
+      <td class="force_col padReset tile_wave_body_pad" align="center" valign="middle" bgcolor="#000000" style="padding: 30px 0"><table border="0" cellspacing="0" cellpadding="0" role="presentation">
+          <tbody>
+            <tr>
+              <td class="center padReset" dir="ltr" align="left" valign="top" style="padding: 0px 10px 0px 0px; color: #f47321; font-size: 13px; line-height: 17px; ms-line-height-rule: exactly;"><font style="font-family: Arial, Helvetica, 'sans-serif';"><strong>This is Our Salute to You</strong></font></td>
+            </tr>
+            <tr>
+              <td class="center mob_tile_pad2" dir="ltr" align="left" valign="top" style="padding: 15px 70px 15px 0px; color: #ffffff; font-size: 11px; line-height: 15px; ms-line-height-rule: exactly;"><font style="font-family: Arial, Helvetica, 'sans-serif';">With the purchase or lease of any 2023 Jeep<sub>&reg;</sub> Brand vehicle, you will be automatically enrolled in a Jeep Wave<sup>&reg;</sup> membership. Benefit from worry-free maintenance, including 24/7 customer support, exclusive member discounts and&nbsp;more.
+      </font></td>
+            </tr>
+            <tr>
+              <td valign="top" style="text-align: left" class="center"><a alias="button_learnmore" href="%%=RedirectTo(concat(@tiles_link_cta,@queryString,'&cta=button_learnmore'))=%%" target="_blank">
+                <img class="hide" src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_jeep_tile_cta.png" alt="LEARN MORE" border="0" width="107">
+                 <!--[if !mso]><!-->
+                  <img class="learncta" src="https://image.e.fcaemail.com/lib/fe2f117170640475751178/m/3/cta_jeep_learn_more_mob.png" border="0" alt="LEARN MORE" style="max-height: 0px; overflow: hidden; display: none;">
+                  <!--<![endif]-->
+              </a></td>
+            </tr>
+          </tbody>
+        </table></td>
+    </tr>
+  </tbody>
+</table>
+  %%[ENDIF]%%
+
+%%[ELSEIF @brand == "r" THEN]%%
+
+%%[
+
+IF(IndexOf(Lowercase(N_BRND), 'commercial') > 0) THEN
+ELSE
+SET @tiles_link_cta = Concat(@brandsite,'revolution/sign-up.html')
+
+]%%
+    <table dir="rtl" width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="email_container bottom_border" role="presentation" style="background-color: #000000;">
+  <tbody>
+    <tr>
+      <td class="force_col padReset" align="center" style="line-height: 0; font-size: 0;"><img role="image" src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_ram_tile_img_dsk_r2.jpg" alt="REV. Pre-production model shown. Actual production model may vary. Features and products shown are for illustrative purposes only. Available Q4 2024." width="300" border="0" class="hide">
+        <!-- Mobile -->
+            <!--[if !mso]><!-->
+            <img src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_ram_tile_img_mob_r2.jpg" alt="REV. Pre-production model shown. Actual production model may vary. Features and products shown are for illustrative purposes only. Available Q4 2024." border="0" style="max-height: 0px; overflow: hidden; display: none;" class="show">
+            <!--<![endif]-->
+            <!-- END :: Mobile -->
+        </td>
+      <td class="force_col" align="center" valign="middle" bgcolor="#000000"><table border="0" cellspacing="0" cellpadding="0" role="presentation">
+          <tbody>
+            <tr>
+              <td class="tile_pad_title_ram" dir="ltr" align="center" valign="top" style="padding: 0px 17px 15px; color: #ffffff; font-size: 20px; line-height: 24px; ms-line-height-rule: exactly; text-transform: uppercase"><font style="font-family: Arial, Helvetica, 'sans-serif';"><strong>LEAD THE CHARGE</strong></font></td>
+            </tr>
+            <tr>
+              <td dir="ltr" align="center" valign="top" style="padding: 0px 20px 15px; color: #ffffff; font-size: 13px; line-height: 16px; ms-line-height-rule: exactly;"><font style="font-family: Arial, Helvetica, 'sans-serif';">With impressive electric performance complemented by stunning design and advanced interior technology, the <br class="hide">capability-driven Ram 1500 REV is <br class="hide">designed to handle the payloads and <br class="hide"> miles it takes to get the job done&nbsp;right.</font></td>
+            </tr>
+            <tr>
+              <td class="tile_pad_cta_ram" align="center" valign="top"><a alias="button_sign_up_for_updates" href="%%=RedirectTo(concat(@tiles_link_cta,@queryString,'&cta=button_sign_up_for_updates'))=%%" target="_blank"><img src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_ram_tile_cta_r2.png" alt="SIGN UP FOR UPDATES" border="0" width="186"></a></td>
+            </tr>
+          </tbody>
+        </table></td>
+    </tr>
+  </tbody>
+</table>
+%%[ENDIF]%%
+%%[ENDIF]%%

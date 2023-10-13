@@ -1,0 +1,151 @@
+<!-- imo_packshot -->
+
+%%[
+
+var @packshot_cta_link, @packshot_cta_alias, @packshot_img_d, @packshot_img_m, @packshot_alt, @offer_version
+
+SET @packshot_cta_link = @brandsite
+SET @offer_version = [I_OFFR]
+
+
+IF @brand == "a" THEN
+    IF @offer_version == "116018" THEN
+        SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/10/imo_alfa_packshot_dsk_r2.jpg"
+        SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/10/imo_alfa_packshot_mob_r2.jpg"
+        SET @packshot_alt = "PULL THE HEARTSTRINGS. ALFA ROMEO FULLY EMBODIES THE ITALIAN PASSION FOR CRAFTSMANSHIP AND DESIGN. WHETHER YOU DECIDE TO DRIVE A STELVIO OR GIULIA, YOU’LL BE TREATED TO AN EXPERIENCE LIKE NO OTHER. Explore. J.D. Power #1 Premium Brand for Sales Satisfaction(3)"
+    ELSE 
+        SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/10/imo_alfa_packshot_dsk_r2.jpg"
+        SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/10/imo_alfa_packshot_mob_r2.jpg"
+        SET @packshot_alt = "PULL THE HEARTSTRINGS. ALFA ROMEO FULLY EMBODIES THE ITALIAN PASSION FOR CRAFTSMANSHIP AND DESIGN. WHETHER YOU DECIDE TO DRIVE A STELVIO OR GIULIA, YOU’LL BE TREATED TO AN EXPERIENCE LIKE NO OTHER. Explore. J. D. Power #1 Premium Brand for Sales Satisfaction(3)"
+    ENDIF
+
+    SET @packshot_cta_alias = "button_explore"
+
+
+ELSEIF @brand == "c" THEN
+    IF @offer_version == "116018" THEN
+        SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_chrysler_packshot_dsk_r7.jpg"
+        SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_chrysler_packshot_mob_r7.jpg"
+        SET @packshot_alt = "MAKE EVERY DAY EXTRAORDINARY. WITH AVAILABLE FEATURES THAT APPEAL TO EACH MEMBER OF THE FAMILY, EACH CHRYSLER BRAND VEHICLE MAKES EVERY JOURNEY A DELIGHT. EXPLORE THE VEHICLES."
+    ELSE
+        SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_chrysler_packshot_dsk_em2.jpg"
+        SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_chrysler_packshot_mob_em2.jpg"
+        SET @packshot_alt = "MAKE EVERY DAY EXTRAORDINARY. WITH AVAILABLE FEATURES THAT APPEAL TO EACH MEMBER OF THE FAMILY, EACH CHRYSLER BRAND VEHICLE MAKES EVERY JOURNEY A DELIGHT. EXPLORE THE VEHICLES. CHRYSLER 300 EXCLUDED FROM OFFER."
+    ENDIF
+
+    SET @packshot_cta_alias = "button_explorethevehicles"
+
+
+ELSEIF @brand == "d" THEN
+    IF @offer_version == "116018" THEN
+        SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_dodge_packshot_dsk_r8.jpg"
+        SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_dodge_packshot_mob_r8.jpg"
+        SET @packshot_alt = "RULE THE STREETS YOUR WAY. With a variety of trims, performance options and appearance packages there’s a Dodge Brand vehicle for everyone. View the full lineup. 2023 Durango SRT Excluded From Offer."
+    ELSE
+        SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_dodge_packshot_dsk_em2.jpg"
+        SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_dodge_packshot_mob_em2.jpg"
+        SET @packshot_alt = "RULE THE STREETS YOUR WAY. With a variety of trims, performance options and appearance packages there’s a Dodge Brand vehicle for everyone. View the full lineup. Vehicles Shown Excluded From Offer."
+    ENDIF
+
+    SET @packshot_cta_alias = "button_viewthefulllineup"
+
+
+ELSEIF @brand == "f" THEN
+
+    SET @packshot_cta_link = "https://www.fiatusa.com/2023/500x.html"
+    SET @packshot_cta_alias = "button_explorefiat500x"
+
+    IF @offer_version == "116018" THEN
+        SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_fiat_packshot_dsk_r6.jpg"
+        SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_fiat_packshot_mob_r6.jpg"
+        SET @packshot_alt = "STAND OUT IN STYLE. THE FIAT® 500X FULLY EMBODIES THE ITALIAN PASSION FOR CRAFTSMANSHIP AND PERFORMANCE, ALL WHILE TAKING THE FIAT BRAND’S PROPENSITY FOR FUN TO THE EXTREME. EXPLORE THE FIAT® 500X."
+    ELSE
+        SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_fiat_packshot_dsk_r7.jpg"
+        SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_fiat_packshot_mob_r7.jpg"
+        SET @packshot_alt = "STAND OUT IN STYLE. THE FIAT® 500X FULLY EMBODIES THE ITALIAN PASSION FOR CRAFTSMANSHIP AND 
+        PERFORMANCE, ALL WHILE TAKING THE FIAT BRAND’S PROPENSITY FOR FUN TO THE EXTREME. EXPLORE THE FIAT® 500X."
+    ENDIF
+
+
+ELSEIF @brand == "j" THEN
+    IF [C_CREATV_VERSN] == "CA182" OR [C_CREATV_VERSN] == "CA334" THEN
+        IF @offer_version == "116018" THEN
+            SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_jeep_4xe_packshot_dsk_r6.jpg"
+            SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_jeep_4xe_packshot_mob_r6.jpg"
+            SET @packshot_alt = "Conquer With Confidence. CHART NEW PATHS AND REDISCOVER OLD ONES WITH THE JEEP BRAND. EXPLORE THE LINEUP."
+        ELSE
+            SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_jeep_4xe_packshot_dsk_em2.jpg"
+            SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_jeep_4xe_packshot_mob_em2.jpg"
+            SET @packshot_alt = "Conquer With Confidence. CHART NEW PATHS AND REDISCOVER OLD ONES WITH THE JEEP BRAND. EXPLORE THE LINEUP. JEEP ADVENTURE DAYS."    
+        ENDIF
+    ELSE
+        IF @offer_version == "116018" THEN
+            SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_jeep_packshot_dsk_r6.jpg"
+            SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_jeep_packshot_mob_r8.jpg"
+            SET @packshot_alt = "Conquer With Confidence. CHART NEW PATHS AND REDISCOVER OLD ONES WITH THE JEEP BRAND. EXPLORE THE LINEUP. AUTOS AWARDS 2022 Newsweek Best SUV Lineup" 
+        ELSE
+            SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_jeep_packshot_dsk_em2.jpg"
+            SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_jeep_packshot_mob_em2.jpg"
+            SET @packshot_alt = "Conquer With Confidence. CHART NEW PATHS AND REDISCOVER OLD ONES WITH THE JEEP BRAND. EXPLORE THE LINEUP. Auto Awards 2022 Newsweek Best SUV Lineup. JEEP® ADVENTURE DAYS."
+        ENDIF
+    ENDIF
+
+    SET @packshot_cta_alias = "button_explorethelineup"
+
+
+ELSEIF @brand == "r" THEN
+    IF @offer_version == "116018" THEN        
+        SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_ram_packshot_dsk_r6.jpg"
+        SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/11/imo_ram_packshot_mob_r6.jpg"
+        SET @packshot_alt = "MAKE NO COMPROMISES. With a variety of trims, powertrain options and appearance packages, there’s a Ram truck for everyone. Learn More. RAM 1500 TRX EXCLUDED FROM OFFER."        
+    ELSE
+        SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_ram_packshot_dsk_em2.jpg"
+        SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_ram_packshot_mob_em2.jpg"
+        SET @packshot_alt = "RAM POWER DAYS. MAKE NO COMPROMISES. With a variety of trims, powertrain options and appearance packages, there’s a Ram truck for everyone. Learn More. RAM 1500 TRX MODEL EXCLUDED FROM OFFER."
+    ENDIF
+
+    SET @packshot_cta_alias = "image_learn_more"
+
+
+IF(IndexOf(Lowercase(N_BRND), 'commercial') > 0) THEN
+    SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_ramC_packshot_dsk_em2.jpg"
+    SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_ramC_packshot_mob_em2.jpg"
+    SET @packshot_alt = "RAM COMMERCIAL TRUCK SEASON. MAKE NO COMPROMISES. With a variety of trims, powertrain options and appearance packages, there's a Ram truck for everyone. PLUS, TAKE ADVANTAGE OF BIG-TIME TAX BENEFITS BY DEDUCTING UP TO 100% OF THE TOTAL PURCHASE PRICE(3) OF SELECT RAM TRUCKS AND VANS ON THIS YEAR'S TAXES. LEARN MORE"
+    SET @packshot_cta_alias = "image_learn_more"
+    SET @packshot_cta_link = "https://www.ramtrucks.com/section168k/index.html"
+ENDIF
+
+
+ELSEIF @brand == "w" THEN
+    IF @offer_version == "116018" THEN
+        SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_wagoneer_packshot.jpg"
+        SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_wagoneer_packshot_mob.jpg"
+        SET @packshot_alt = "Inspired by Grandeur. Wagoneer and Grand Wagoneer reinterpret their own legacy by taking the premium SUV into uncharted territories of style, comfort and adventure, arriving as unmistakable works of art and distinction. Explore the Wagoneer Brand."
+    ELSE
+        SET @packshot_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_wagoneer_packshot.jpg"
+        SET @packshot_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_wagoneer_packshot_mob.jpg"
+        SET @packshot_alt = "Inspired by Grandeur. Wagoneer and Grand Wagoneer reinterpret their own legacy by taking the premium SUV into uncharted territories of style, comfort and adventure, arriving as unmistakable works of art and distinction. Explore the Wagoneer Brand."
+    ENDIF
+
+    SET @packshot_cta_alias = "button_explorewagoneer"
+    SET @packshot_cta_link = "https://www.jeep.com/wagoneer.html"
+
+ENDIF
+
+]%%
+
+
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="email_container packshot_ram_spacing" role="presentation" %%[IF @brand == 'f' THEN]%%style="background-color: #000000; padding-bottom: 15px;"%%[ENDIF]%%>
+    <tr>
+        <td align="center" valign="top">
+            <a alias="%%=v(@packshot_cta_alias)=%%" target="_blank" href="%%=RedirectTo(concat(@packshot_cta_link,@queryString,'&cta=',@packshot_cta_alias))=%%">
+                <img class="hide" src="%%=v(@packshot_img_d)=%%" alt="%%=v(@packshot_alt)=%%" border="0" width="600" style="display: block">
+                <!-- Mobile -->
+                <!--[if !mso]><!-->
+                <img src="%%=v(@packshot_img_m)=%%" alt="%%=v(@packshot_alt)=%%" border="0" style="max-height: 0px; overflow: hidden; display: none;" class="show">
+                <!--<![endif]-->
+                <!-- END :: Mobile -->
+            </a>
+        </td>
+    </tr>
+</table>

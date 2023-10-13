@@ -1,0 +1,197 @@
+<!-- imo_disclaimer -->
+
+%%[
+
+var @disclaimer1, @disclaimer2, @disclaimer3
+
+
+
+IF @brand == "a" THEN
+    IF [PROGRAM_ID] == "43CPG4" THEN
+        SET @disclaimer1 = "1. $2,000 Bonus Cash Allowance valid toward the purchase of a new 2023 Giulia (excluding Sprint FWD/AWD and including QV) or 2023 Stelvio (excluding Sprint FWD/AWD and including QV). Must order or take retail delivery by <strong>6/30/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CPG4</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CPG3" THEN
+        SET @disclaimer1 = "1. $1,750 Bonus Cash Allowance valid toward the purchase of a new 2023 Giulia (excluding Sprint FWD/AWD and including QV) or 2023 Stelvio (excluding Sprint FWD/AWD and including QV). Must order or take retail delivery by <strong>6/30/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CPG3</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CPG2" THEN
+        SET @disclaimer1 = "1. $1,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Giulia (excluding Sprint FWD/AWD and including QV) or 2023 Stelvio (excluding Sprint FWD/AWD and including QV). Must order or take retail delivery by <strong>6/30/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CPG2</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CPG1" THEN
+        SET @disclaimer1 = "1. $750 Bonus Cash Allowance valid toward the purchase of a new 2023 Giulia (excluding Sprint FWD/AWD and including QV) or 2023 Stelvio (excluding Sprint FWD/AWD and including QV). Must order or take retail delivery by <strong>6/30/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CPG1</strong>"
+    ENDIF
+
+  SET @disclaimer3 = "3. For J. D. Power 2022 U.S. award information, visit <a href='https://jdpower.com/awards' target='_blank' style='text-decoration: underline; color: #ffffff'>jdpower.com/awards</a>."
+
+ELSEIF @brand == "c" THEN
+    IF [PROGRAM_ID] == "43CRD4" THEN
+        SET @disclaimer1 = "1. $1,250 Bonus Cash Allowance valid toward the purchase of a new 2023 Chrysler Pacifica (excluding Pacifica Touring). Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD4</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD3" THEN
+        SET @disclaimer1 = "1. $1,000 Bonus Cash Allowance valid toward the purchase of a new 2023 Chrysler Pacifica (excluding Pacifica Touring). Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD3</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD2" THEN
+        SET @disclaimer1 = "1. $750 Bonus Cash Allowance valid toward the purchase of a new 2023 Chrysler Pacifica (excluding Pacifica Touring). Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD2</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD1" THEN
+        SET @disclaimer1 = "1. $750 Bonus Cash Allowance valid toward the purchase of a new 2023 Chrysler Pacifica (excluding Pacifica Touring). Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD1</strong>"
+    ENDIF
+    
+    
+
+ELSEIF @brand == "d" THEN
+    IF [PROGRAM_ID] == "43CRD4" THEN
+        SET @disclaimer1 = "1. $500 Bonus Cash Allowance valid toward the purchase of a new 2023 or 2024 Dodge Hornet. $2,000 Bonus Cash Allowance valid toward the purchase of a new 2023 Dodge Durango (excluding SRT<sup>&reg;</sup>). Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD4</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD3" THEN
+        SET @disclaimer1 = "1. $500 Bonus Cash Allowance valid toward the purchase of a new 2023 or 2024 Dodge Hornet. $1,750 Bonus Cash Allowance valid toward the purchase of a new 2023 Dodge Durango (excluding SRT<sup>&reg;</sup>). Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD3</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD2" THEN
+        SET @disclaimer1 = "1. $500 Bonus Cash Allowance valid toward the purchase of a new 2023 or 2024 Dodge Hornet. $1,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Dodge Durango (excluding SRT<sup>&reg;</sup>). Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD2</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD1" THEN
+        SET @disclaimer1 = "1. $500 Bonus Cash Allowance valid toward the purchase of a new 2023 or 2024 Dodge Hornet. $750 Bonus Cash Allowance valid toward the purchase of a new 2023 Dodge Durango (excluding SRT<sup>&reg;</sup>). Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD1</strong>"
+    ENDIF
+
+ELSEIF @brand == "f" THEN
+    IF [PROGRAM_ID] == "43CPG4" THEN
+        SET @disclaimer1 = "1. $500 Bonus Cash Allowance valid toward the purchase of a new 2023 FIAT<sup>&reg;</sup> 500X. Must order or take retail delivery
+        by <strong>6/30/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and
+        transferrable only to immediate family members within the same household (requires proof of address via
+        government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate
+        per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original
+        certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving
+        this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CPG4</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CPG3" THEN
+        SET @disclaimer1 = "1. $500 Bonus Cash Allowance valid toward the purchase of a new 2023 FIAT<sup>&reg;</sup> 500X. Must order or take retail delivery
+        by <strong>6/30/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and
+        transferrable only to immediate family members within the same household (requires proof of address via
+        government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate
+        per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original
+        certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving
+        this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CPG3</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CPG2" THEN
+        SET @disclaimer1 = "1. $500 Bonus Cash Allowance valid toward the purchase of a new 2023 FIAT<sup>&reg;</sup> 500X. Must order or take retail delivery
+        by <strong>6/30/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and
+        transferrable only to immediate family members within the same household (requires proof of address via
+        government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate
+        per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original
+        certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving
+        this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CPG2</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CPG1" THEN
+        SET @disclaimer1 = "1. $500 Bonus Cash Allowance valid toward the purchase of a new 2023 FIAT<sup>&reg;</sup> 500X. Must order or take retail delivery
+        by <strong>6/30/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and
+        transferrable only to immediate family members within the same household (requires proof of address via
+        government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate
+        per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original
+        certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving
+        this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CPG1</strong>"
+    ENDIF
+
+ELSEIF @brand == "j" THEN
+    
+    IF [PROGRAM_ID] == "43CRD7" THEN
+        SET @disclaimer1 = "1. $1,250 Bonus Cash Allowance valid toward the purchase of a new 2023 Jeep<sub>&reg;</sub> Compass (excluding Sport FWD and Latitude FWD), Renegade (excluding Sport FWD) or Cherokee. $2,000 Bonus Cash Allowance valid toward the purchase of a new 2023 Jeep Gladiator, Grand Cherokee (excluding SRT<sup>&reg;</sup>) and 2023 or 2024 Wrangler (excluding Rubicon 392). $2,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Wagoneer (excluding Series I) or Grand Wagoneer. Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD7</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD4" THEN
+        SET @disclaimer1 = "1. $1,250 Bonus Cash Allowance valid toward the purchase of a new 2023 Jeep<sub>&reg;</sub> Compass (excluding Sport FWD and Latitude FWD), Renegade (excluding Sport FWD) or Cherokee. $2,000 Bonus Cash Allowance valid toward the purchase of a new 2023 Jeep Gladiator, Grand Cherokee (excluding SRT<sup>&reg;</sup>) and 2023 or 2024 Wrangler (excluding Rubicon 392). $2,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Wagoneer (excluding Series I) or Grand Wagoneer. Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD4</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD3" THEN
+        SET @disclaimer1 = "1. $500 Bonus Cash Allowance valid toward the purchase of a new 2023 Jeep<sub>&reg;</sub> Compass (excluding Sport FWD and Latitude FWD), Renegade (excluding Sport FWD) or Cherokee. $1,750 Bonus Cash Allowance valid toward the purchase of a new 2023 Jeep Gladiator, Grand Cherokee (excluding SRT<sup>&reg;</sup>) and 2023 or 2024 Wrangler (excluding Rubicon 392). $2,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Wagoneer (excluding Series I) or Grand Wagoneer. Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD3</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD2" THEN
+        SET @disclaimer1 = "1. $500 Bonus Cash Allowance valid toward the purchase of a new 2023 Jeep<sub>&reg;</sub> Compass (excluding Sport FWD and Latitude FWD), Renegade (excluding Sport FWD) or Cherokee. $1,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Jeep Gladiator, Grand Cherokee (excluding SRT<sup>&reg;</sup>) and 2023 or 2024 Wrangler (excluding Rubicon 392). $2,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Wagoneer (excluding Series I) or Grand Wagoneer. Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD2</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD1" THEN
+        SET @disclaimer1 = "1. $500 Bonus Cash Allowance valid toward the purchase of a new 2023 Jeep<sub>&reg;</sub> Compass (excluding Sport FWD and Latitude FWD), Renegade (excluding Sport FWD) or Cherokee. $750 Bonus Cash Allowance valid toward the purchase of a new 2023 Jeep Gladiator, Grand Cherokee (excluding SRT<sup>&reg;</sup>) and 2023 or 2024 Wrangler (excluding Rubicon 392). $2,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Wagoneer (excluding Series I) or Grand Wagoneer. Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD1</strong>"
+
+    ENDIF
+
+    IF [C_CREATV_VERSN] == "CA197" THEN
+        SET @disclaimer3 = "3. Offer valid toward the purchase or lease of a new and unused 2023 Jeep Gladiator. Not compatible with any other consumer retail offers. Contact dealer for details. Take retail delivery by <strong>10/31/2023.</strong> Program ID: <strong>39CP3</strong>"
+    ENDIF
+
+    
+
+
+ELSEIF @brand == "r" THEN
+    IF [PROGRAM_ID] == "43CRD8" THEN
+        SET @disclaimer1 = "1. $2,000 Bonus Cash Allowance valid toward the purchase of a new 2023 Ram 2500/3500 Pickup, Ram 3500/4500/5500 Chassis Cab and Ram ProMaster<sup>&reg;</sup>. $2,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Ram 1500 (excluding Ram 1500 TRX). Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD8</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD7" THEN
+        SET @disclaimer1 = "1. $1,750 Bonus Cash Allowance valid toward the purchase of a new 2023 Ram 2500/3500 Pickup, Ram 3500/4500/5500 Chassis Cab and Ram ProMaster<sup>&reg;</sup>. $2,000 Bonus Cash Allowance valid toward the purchase of a new 2023 Ram 1500 (excluding Ram 1500 TRX). Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD7</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD6" THEN
+        SET @disclaimer1 = "1. $1,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Ram 2500/3500 Pickup, Ram 3500/4500/5500 Chassis Cab and Ram ProMaster<sup>&reg;</sup>. $2,000 Bonus Cash Allowance valid toward the purchase of a new 2023 Ram 1500 (excluding Ram 1500 TRX). Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD6</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD5" THEN
+        SET @disclaimer1 = "1. $750 Bonus Cash Allowance valid toward the purchase of a new 2023 Ram 2500/3500 Pickup, Ram 3500/4500/5500 Chassis Cab and Ram ProMaster<sup>&reg;</sup>. $1,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Ram 1500 (excluding Ram 1500 TRX). Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD5</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD4" THEN
+        SET @disclaimer1 = "1. $2,000 Bonus Cash Allowance valid toward the purchase of a new 2023 Ram 1500 (excluding Ram 1500 TRX), Ram 2500/3500 Pickup, Ram 3500/4500/5500 Chassis Cab and Ram ProMaster<sup>&reg;</sup>. Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD4</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD3" THEN
+        SET @disclaimer1 = "1. $1,750 Bonus Cash Allowance valid toward the purchase of a new 2023 Ram 1500 (excluding Ram 1500 TRX), Ram 2500/3500 Pickup, Ram 3500/4500/5500 Chassis Cab and Ram ProMaster<sup>&reg;</sup>. Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD3</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD2" THEN
+        SET @disclaimer1 = "1. $1,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Ram 1500 (excluding Ram 1500 TRX), Ram 2500/3500 Pickup, Ram 3500/4500/5500 Chassis Cab and Ram ProMaster<sup>&reg;</sup>. Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD2</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD1" THEN
+        SET @disclaimer1 = "1. $750 Bonus Cash Allowance valid toward the purchase of a new 2023 Ram 1500 (excluding Ram 1500 TRX), Ram 2500/3500 Pickup, Ram 3500/4500/5500 Chassis Cab and Ram ProMaster<sup>&reg;</sup>. Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD1</strong>"
+    ENDIF
+
+
+    IF(IndexOf(Lowercase(N_BRND), 'commercial') > 0) THEN
+        SET @disclaimer3 = "3. This incentive is offered by a third party and is subject to change without notice. Please confirm this information to ensure its accuracy and availability. Consult a tax professional for details and eligibility&nbsp;requirements."
+    ENDIF
+    
+ELSEIF @brand == "w" THEN
+    IF [PROGRAM_ID] == "43CRD4" THEN
+        SET @disclaimer1 = "1. $2,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Wagoneer (excluding Series I) or Grand Wagoneer. Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD4</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD3" THEN
+        SET @disclaimer1 = "1. $2,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Wagoneer (excluding Series I) or Grand Wagoneer. Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD3</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD2" THEN
+        SET @disclaimer1 = "1. $2,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Wagoneer (excluding Series I) or Grand Wagoneer. Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD2</strong>"
+
+    ELSEIF [PROGRAM_ID] == "43CRD1" THEN
+        SET @disclaimer1 = "1. $2,500 Bonus Cash Allowance valid toward the purchase of a new 2023 Wagoneer (excluding Series I) or Grand Wagoneer. Must order or take retail delivery by <strong>10/31/2023.</strong> Not eligible for lease, or available to the general public. Valid for the person named on certificate and transferrable only to immediate family members within the same household (requires proof of address via government-issued identification). Certificate must be presented to dealer at time of purchase. Only one (1) certificate per email or postal mail address. Only one (1) original certificate may be redeemed per eligible customer. If original certificate is lost, a dealer can verify customer eligibility. Offer not redeemable on a purchase made prior to receiving this certificate. Certificate is nonnegotiable and not redeemable for cash. See participating dealer for details. <strong>Program ID:&nbsp;43CRD1</strong>"
+    ENDIF
+   
+ENDIF
+
+SET @disclaimer2 = concat("2. ",[REGIONAL_DISCLRS]," Regional offer amounts may vary. Please check latest offers online or contact your dealer for the latest incentive&nbsp;information.")
+
+]%%
+
+<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+    <td style="padding:0 20px 0px; color: %%=v(@footerColor)=%%; font-size: 11px; line-height: 15px; ms-line-height-rule: exactly; text-align: left">
+        <font style="font-family: Roboto, Arial, Helvetica, 'sans-serif'">
+            %%=v(@disclaimer1)=%%</font>
+    </td>
+</tr>
+<tr>
+    <td style="padding:0 20px 0px; color: %%=v(@footerColor)=%%; font-size: 11px; line-height: 15px; ms-line-height-rule: exactly; text-align: left">
+        <font style="font-family: Roboto, Arial, Helvetica, 'sans-serif'">
+            %%[IF @offer_type == "Dual" THEN]%%
+                %%=v(@disclaimer2)=%%
+            %%[ENDIF]%%
+        </font>
+    </td>
+</tr>
+<tr>
+    <td style="padding:0 20px 0px; color: %%=v(@footerColor)=%%; font-size: 11px; line-height: 15px; ms-line-height-rule: exactly; text-align: left">
+        <font style="font-family: Roboto, Arial, Helvetica, 'sans-serif'">
+          %%=v(@disclaimer3)=%%
+        </font>
+    </td>
+</tr>
+  </tbody>
+</table>
+
+

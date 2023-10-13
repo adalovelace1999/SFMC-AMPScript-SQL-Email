@@ -1,0 +1,263 @@
+<!-- imo_second_offer -->
+
+
+%%[
+
+
+
+VAR @headline_copy, @left_copy, @right_copy, @offer_bg, @offer_txt_color, @offer_or, @offer_or_mob, @programID, @left_amount, @right_amount
+
+SET @programID = [PROGRAM_ID]
+
+IF @brand == "d" THEN
+ 
+ SET @offer_bg = "#e50000"
+    SET @headline_copy = "OR HERE ARE YOUR OTHER PRIVATE<span class='break'> BONUS <br class='hide'>CASH allowance OPTIONS</span>"
+
+     SET @offer_txt_color = "#ffffff"
+     SET @offer_border = "#ffffff"
+     SET @offer_or = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_dodge_or.png"
+     SET @offer_or_mob = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_dodge_or_mob.png"
+
+
+ IF @programID == "43CRD1" THEN <!--conditional amounts and left and right copy-->
+ 
+  SET @left_amount = "500"
+  SET @right_amount = "750"
+  SET @left_copy = "TOWARD 2023 OR 2024 <br class='hide'>DODGE&nbsp;HORNET&nbsp;MODELS<sup>1</sup>"
+  SET @right_copy = "TOWARD SELECT 2023<br> DODGE DURANGO MODELS<sup>1</sup>"
+
+ ELSEIF @programID == "43CRD2" THEN
+
+  SET @left_amount = "500"
+  SET @right_amount = "1,500"
+  SET @left_copy = "TOWARD 2023 OR 2024 <br class='hide'>DODGE&nbsp;HORNET&nbsp;MODELS<sup>1</sup>"
+  SET @right_copy = "TOWARD SELECT 2023<br> DODGE DURANGO MODELS<sup>1</sup>"
+
+ ELSEIF @programID == "43CRD3" THEN
+
+  SET @left_amount = "500"
+  SET @right_amount = "1,750"
+  SET @left_copy = "TOWARD 2023 OR 2024 <br class='hide'>DODGE&nbsp;HORNET&nbsp;MODELS<sup>1</sup>"
+  SET @right_copy = "TOWARD SELECT 2023<br> DODGE DURANGO MODELS<sup>1</sup>"
+
+ ELSEIF @programID == "43CRD4" THEN
+
+  SET @left_amount = "500"
+  SET @right_amount = "2,000"
+  SET @left_copy = "TOWARD 2023 OR 2024 <br class='hide'>DODGE&nbsp;HORNET&nbsp;MODELS<sup>1</sup>"
+  SET @right_copy = "TOWARD SELECT 2023<br> DODGE DURANGO MODELS<sup>1</sup>"
+
+
+ ENDIF
+
+
+ELSEIF @brand == "j" THEN
+ 
+ SET @offer_bg = "#000000"
+ SET @headline_copy = "OR HERE ARE YOUR <span class='break'>OTHER PRIVATE BONUS <br>CASH allowance OPTIONS"
+ SET @left_copy = "<span class='break'>TOWARD SELECT 2023 JEEP<sub>&reg;</sub><br class='hide'> RENEGADE,</span> COMPASS AND <br class='hide'>CHEROKEE MODELS<sup>1</sup>"
+
+    IF @offer_version == "116018" THEN
+     SET @right_copy = "<span class='break'>TOWARD SELECT 2023 JEEP <br class='hide'>GRAND CHEROKEE </span><span class='break'>(INCLUDING 4XE), <br class='hide'>JEEP GLADIATOR AND</span> <span class='break'>SELECT <br class='hide'>2023 OR 2024 JEEP WRANGLER</span> <br class='hide'>(INCLUDING 4XE) MODELS<sup>1</sup>"
+    ELSE
+    SET @right_copy = "<span class='break'>TOWARD SELECT 2023 JEEP GRAND CHEROKEE </span><span class='break'>(INCLUDING 4XE), <br class='hide'>GLADIATOR AND SELECT 2023 OR </span>2024<br class='hide'> WRANGLER (INCLUDING 4XE) MODELS<sup>1</sup>"
+    ENDIF
+    
+    
+ SET @offer_txt_color = "#fdb92c"
+ SET @offer_border = "#747474"
+ SET @offer_or = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_jeep_or.png"
+    SET @offer_or_mob = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_jeep_or_mob.png"
+
+
+IF @programID == "43CRD1" THEN
+    SET @left_amount = "500"
+    SET @right_amount = "750"
+
+ELSEIF @programID == "43CRD2" THEN
+    SET @left_amount = "500"
+    SET @right_amount = "1,500"
+
+ELSEIF @programID == "43CRD3" THEN
+    SET @left_amount = "500"
+    SET @right_amount = "1,750"
+
+ELSEIF @programID == "43CRD4" THEN
+    SET @left_amount = "1,250"
+    SET @right_amount = "2,000"
+        
+ELSEIF @programID == "43CRD7" THEN
+    SET @left_amount = "1,250"
+    SET @right_amount = "2,000"        
+
+ENDIF
+ 
+ELSEIF @brand == "r" THEN
+    SET @offer_bg = "#000000"
+    SET @headline_copy = "OR HERE ARE YOUR <span class='break'>OTHER PRIVATE BONUS <br>CASH allowance OPTIONS</span>"
+    SET @left_copy = "TOWARD 2023 RAM HEAVY DUTY,<br>RAM CHASSIS CAB AND <br>RAM PROMASTER<sup>&reg;1</sup>"
+    
+     IF @offer_version == "116018" THEN
+        SET @right_copy = "TOWARD 2023 RAM 1500 MODELS<br> (EXCLUDING RAM TRX)<sup>1</sup>"
+    ELSE   
+        SET @right_copy = "TOWARD 2023 RAM 1500 MODELS<br> (EXCLUDING RAM TRX)<sup>1</sup>"
+    ENDIF
+     
+     SET @offer_txt_color = "#ffffff"
+     SET @offer_border = "#747474"
+     SET @offer_or = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_ram_or.png"
+     SET @offer_or_mob = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_ram_or_mob.png"
+
+
+IF @programID == "43CRD5" THEN
+    SET @left_amount = "750"
+    SET @right_amount = "1,500"  
+        
+ELSEIF @programID == "43CRD6" THEN
+    SET @left_amount = "1,500"
+    SET @right_amount = "2,000" 
+        
+ELSEIF @programID == "43CRD7" THEN
+    SET @left_amount = "1,750"
+    SET @right_amount = "2,000" 
+        
+ELSEIF @programID == "43CRD8" THEN
+    SET @left_amount = "2,000"
+    SET @right_amount = "2,500" 
+ENDIF
+   
+ENDIF
+
+]%%
+
+
+
+
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="email_container" style="margin: 0 auto;" role="presentation">
+    %%[IF @brand == "d" THEN]%%
+    <tr>
+        <td align="center" valign="top" style="line-height: 0px;"><img src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_dodge_second_hdl.png" alt="OR HERE YOU ARE OTHER PRIVATE BONUS CASH ALLOWANCE OPTIONS" class="hide" width="600" border="0">
+        <!-- Mobile -->
+        <!--[if !mso]><!-->
+        <img src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_dodge_second_hdl_mob.png" alt="OR HERE YOU ARE OTHER PRIVATE BONUS CASH ALLOWANCE OPTIONS" border="0" style="max-height: 0px; overflow: hidden; display: none;" class="show">
+        <!--<![endif]-->
+        <!-- END :: Mobile -->
+        
+        </td>
+    </tr>
+    %%[ELSEIF @brand == "r" THEN]%%
+    <tr>
+        <td align="center" bgcolor="%%=v(@offer_bg)=%%" style="padding:25px 15px 20px;">
+            <img src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_ram_second_hdl.png" alt="OR HERE ARE YOUR OTHER PRIVATE BONUS CASH ALLOWANCE OPTIONS" class="hide" width="515" border="0">
+        <!-- Mobile -->
+        <!--[if !mso]><!-->
+        <img src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_ram_second_hdl_mob.png" alt="OR HERE ARE YOUR OTHER PRIVATE BONUS CASH ALLOWANCE OPTIONS" border="0" style="max-height: 0px; overflow: hidden; display: none; max-width: 282px" class="show">
+        <!--<![endif]-->
+        <!-- END :: Mobile -->
+        </td>
+    </tr>
+    <tr>
+        <td align="center" valign="top" style="padding: 0 30px;"  bgcolor="%%=v(@offer_bg)=%%">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+  <tbody>
+    <tr>
+      <td style=" border-bottom: 1px solid %%=v(@offer_border)=%%"></td>
+    </tr>
+  </tbody>
+</table>
+        </td>
+    </tr>
+    %%[ELSE]%%
+    <tr>
+        <td align="center" bgcolor="%%=v(@offer_bg)=%%" style="padding:25px 15px 20px; font-size: 20px; color: %%=v(@offer_txt_color)=%%; font-weight: bold; text-transform: uppercase;">
+            <font style="font-family: Roboto, Arial, Helvetica, 'sans-serif'">%%=v(@headline_copy)=%%</font>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" valign="top" style="padding: 0 30px;"  bgcolor="%%=v(@offer_bg)=%%">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+  <tbody>
+    <tr>
+      <td style=" border-bottom: 1px solid %%=v(@offer_border)=%%"></td>
+    </tr>
+  </tbody>
+</table>
+        </td>
+    </tr>
+    %%[ENDIF]%%
+</table>
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="email_container" style="margin: 0 auto; background-color: %%=v(@offer_bg)=%%;" role="presentation">
+    <tr>
+        <td>
+            <table border="0" align="center" cellpadding="0" cellspacing="0" class="email_container" style="margin: 0 auto; background-color: %%=v(@offer_bg)=%%;" role="presentation">
+                <tr>
+                    <td width="225" class="force_col_center offer_box_top" align="center" style="padding: 15px 0 30px 20px;">
+                        <table border="0" cellspacing="0" cellpadding="0" role="presentation" align="center">
+                            <tbody>
+                                <tr>
+                                    <td align="center" style="font-size: 35px; line-height: 35px; color:%%=v(@offer_txt_color)=%%; font-weight: bold;">
+                                        <font style="font-family: Roboto, Arial, Helvetica, 'sans-serif'"><sup style="font-size: 18px;">$</sup>%%=v(@left_amount)=%%</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="font-size: 11px; line-height: 18px; color: #ffffff;">
+                                        <font style="font-family: Roboto, Arial, Helvetica, 'sans-serif'">
+            
+                                            %%=v(@left_copy)=%%
+                 
+                                        </font>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td class="force_col_center offer_border" style="padding:15px 30px;">
+                        <img src="%%=v(@offer_or)=%%" alt="OR" width="17" border="0" class="hide">
+                        <!-- Mobile -->
+                        <!--[if !mso]><!-->
+                        <img src="%%=v(@offer_or_mob)=%%" alt="OR" border="0" style="max-height: 0px; overflow: hidden; display: none;" class="show offer_with">
+                        <!--<![endif]-->
+                        <!-- END :: Mobile -->
+                    </td>
+                    <td width="225" class="force_col_center offer_box_bottom" align="center" style="padding:15px 20px 30px 0;">
+                        <table border="0" cellspacing="0" cellpadding="0" role="presentation" align="center">
+                            <tbody>
+                                <tr>
+                                    <td align="center" style="font-size: 35px; line-height: 35px; color:%%=v(@offer_txt_color)=%%; font-weight: bold;">
+                                        <font style="font-family: Roboto, Arial, Helvetica, 'sans-serif'"><sup style="font-size: 18px;">$</sup>%%=v(@right_amount)=%%</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="font-size: 11px;  line-height: 18px; color: #ffffff;">
+                                        <font style="font-family: Roboto, Arial, Helvetica, 'sans-serif'">
+
+                                            %%=v(@right_copy)=%%
+                        
+                                        </font>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+%%[ IF @brand == "j" AND [C_CREATV_VERSN] == "CA197" THEN ]%%
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="email_container" role="presentation">
+    <tr>
+        <td align="center" valign="top">
+            <a alias="" target="_blank" href="">
+                <img class="hide" src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_jeep_gladiator_dsk_em2.jpg" alt="OR PURCHASE OR LEASE A 2023 JEEP GLADIATOR AND GET 10% BELOW MSRP FOOTNOTE 3" border="0" width="600" style="display: block">
+                <!-- Mobile -->
+                <!--[if !mso]><!-->
+                <img src="https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/imo_jeep_gladiator_mob_em2.jpg" alt="OR PURCHASE OR LEASE A 2023 JEEP GLADIATOR AND GET 10% BELOW MSRP FOOTNOTE 3" border="0" style="max-height: 0px; overflow: hidden; display: none;" class="show">
+                <!--<![endif]-->
+                <!-- END :: Mobile -->
+            </a>
+        </td>
+    </tr>
+</table>
+%%[ ENDIF ]%%

@@ -1,0 +1,305 @@
+<!-- imo_footer -->
+
+%%[ 
+
+
+/* TRUE OR FALSE VALUE TO SHOW/HIDE FOOTER NAV */
+var @isFooterWithNav
+SET @isFooterWithNav = true
+
+
+/*  COLOR AND BG OF THE BUTTONS ON MOBILE*/
+var @mobile_footerButtons_Color, @mobile_footerButtons_BG
+
+/* SOCIAL ICONS */
+var @facebookLink, @twitterLink, @instagramLink, @youtubeLink, @tiktokLink, @linkedinLink
+
+
+/* GLOBAL SOCIAL ICONS - F & W DO NOT SHARE THESE */
+SET @facebookLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/5/icon_fb.gif"
+SET @twitterLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/5/icon_tw.gif"
+SET @instagramLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/5/icon_ig.gif"
+SET @youtubeLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/5/icon_yt.gif"
+
+/*THESE SOCIAL ICONS ARE JUST FOR RAM RETAIL*/
+
+SET @tiktokLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/5/icon_tiktok.gif"
+SET @linkedinLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/5/icon_li.gif"
+
+/* FOOTER URLS BY BRAND */
+var @brandNameToDisplay, @navLastLinkText, @navLastLinkURL, @brandsite, @brandsite_alter, @social_fb, @social_tw, @social_ig, @social_yt, @social_tt, @social_in, @contactBrandLink, @privacyBrandLink, @copyrightBrandLink
+var @footerBrandLogo, @footerLogoSize, @search_inventory_sufix
+
+SET @search_inventory_sufix = "lineup.sni.html"
+
+
+
+IF @brand == "a" THEN
+
+ SET @brandsite = "https://www.alfaromeousa.com/"
+    SET @brandNameNav = "alfaromeousa"
+    SET @brandNameToDisplay = "Alfa Romeo"
+    SET @search_inventory_sufix = "vehicle-selector.sni?app=sni"
+ 
+    SET @navLastLinkText = "Alfa Romeo Brand gear"
+ SET @navLastLinkURL = "https://www.shopalfaromeousa.com/"
+
+
+ SET @footerBrandLogo = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/logo_alfa_emblem_wht.png"
+    SET @footerLogoSize = "80"
+
+
+
+ELSEIF @brand == "c" THEN
+
+    SET @brandsite = "https://www.chrysler.com/"
+    SET @brandNameNav = "Chrysler"
+    SET @brandNameToDisplay = "Chrysler"
+    
+    SET @navLastLinkText = "Merchandise"
+    SET @navLastLinkURL = "https://www.collection.chrysler.com/"
+
+    SET @footerBrandLogo = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/logo_chrysler_blk.png"
+    SET @footerLogoSize = "180"
+
+
+
+ELSEIF @brand == "d" THEN
+
+    SET @brandsite = "https://www.dodge.com/"
+    SET @brandNameNav = "Dodge"
+    SET @brandNameToDisplay = "Dodge"
+
+    SET @navLastLinkText = "Dodge Brand gear"
+    SET @navLastLinkURL = "https://www.life.dodge.com/"
+
+    SET @footerBrandLogo = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/10/Dodge_wht_red_stripes.png"
+    SET @footerLogoSize = "190"
+
+
+
+ELSEIF @brand == "f" THEN
+
+    SET @brandsite = "https://www.fiatusa.com/"
+    SET @brandNameNav = "FIATUSA"
+    SET @brandNameToDisplay = "FIAT"
+
+    SET @search_inventory_sufix = "lineup.sni.html?app=sni"
+    
+    SET @navLastLinkText = "Merchandise"
+    SET @navLastLinkURL = "https://www.e-store.fiatusa.com/"
+
+    SET @footerBrandLogo = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/FIAT_logo_wht.png"
+    SET @footerLogoSize = "50"
+
+    SET @facebookLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/fb_wht_blk_round.png"
+    SET @twitterLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/tw_wht_blk_round.png"
+    SET @instagramLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/10/ig_wht_blk_round.png"
+    SET @youtubeLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/10/yt_wht_blk_round.png"
+
+
+
+
+ELSEIF @brand == "j" THEN
+ 
+ SET @brandsite = "https://www.jeep.com/"
+    SET @brandNameNav = "Jeep"
+    SET @brandNameToDisplay = "Jeep"
+
+ SET @navLastLinkText = "Jeep Brand Gear"
+ SET @navLastLinkURL = "https://www.gear.jeep.com/"
+
+ <!-- SET @footerBrandLogo = "https://www.jeep.com/content/dam/fca-brands/na/crm/logos/jeep/Jeep_3D.png" -->
+ SET @footerBrandLogo = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/Jeep_3D.png"
+ SET @footerLogoSize = "115"
+
+
+
+ELSEIF @brand == "r" THEN  
+
+    SET @brandsite = "https://www.ramtrucks.com/"
+    SET @brandNameNav = "RamTrucks"
+    SET @brandNameToDisplay = "Ram "
+
+    SET @navLastLinkText = "Merchandise"
+    SET @navLastLinkURL = "https://www.outfitter.ramtrucks.com/"
+
+    SET @footerBrandLogo = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/Ram_stacked_blk.png"
+    SET @footerLogoSize = "100"
+
+        IF(IndexOf(Lowercase(N_BRND), 'commercial') > 0) THEN
+            
+            SET @brandsite = "https://www.ramtrucks.com/"
+            SET @brandNameNav = "Ram"
+
+            SET @footerBrandLogo = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/logo_Ram_Comm_blk_red.png"
+            SET @footerLogoSize = "200"
+
+
+        ENDIF
+
+
+ELSEIF @brand == "w" Then
+
+
+    SET @brandsite = "https://www.jeep.com/wagoneer.html"
+    SET @brandsite_alter = "https://www.jeep.com/wagoneer/"
+    SET @brandNameNav = "Wagoneer"
+    SET @brandNameToDisplay = "Wagoneer"
+
+    SET @search_inventory_sufix = "vehicle-selector.sni?app=sni"
+
+    SET @navLastLinkText = "Wagoneer Brand Gear"
+    SET @navLastLinkURL = "https://www.gear.jeep.com/jeep/collections/wagoneer.html"
+
+    SET @footerBrandLogo = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/logo_wagoneer_dkmode.png"
+    SET @footerLogoSize = "230"
+
+    SET @facebookLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/icon_fb_blue_wa.gif"
+    SET @twitterLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/icon_tw_blue.gif"
+    SET @instagramLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/icon_ig_blue_wa.gif"
+    SET @youtubeLink = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/icon_yt_blue_wa.gif"
+
+
+
+ENDIF
+
+
+/*  NAV CTAs*/
+var  @searchInventory, @getIncentives, @findADealer, @contactBrandName
+
+IF (@brand == "r") THEN
+    SET @contactBrandLink = Concat('https://fcacommunity.force.com/','RAM','/s/')
+ELSE
+    SET @contactBrandLink = Concat('https://fcacommunity.force.com/',@brandNameToDisplay,'/s/')
+ENDIF
+SET @copyrightBrandLink = Concat(@brandsite,'crossbrand_us/copyright')
+SET @privacyBrandLink = Concat(@brandsite,'crossbrand_us/privacy')
+
+SET @searchInventory = Concat(@brandsite,@search_inventory_sufix)
+SET @getIncentives = Concat(@brandsite,'lineup.incentives.html')
+SET @findADealer = Concat(@brandsite,'find-dealer.html')
+
+SET @social_fb = Concat('https://www.facebook.com/',@brandNameLinks)
+SET @social_tw = Concat('https://twitter.com/',@brandNameLinks)
+SET @social_ig = Concat('https://www.instagram.com/',@brandNameLinks)
+SET @social_yt = Concat('https://www.youtube.com/user/',@brandNameLinks)
+SET @social_tt = Concat('https://www.tiktok.com/@',@brandNameLinks)
+SET @social_in = 'https://www.linkedin.com/showcase/ram-brand/'
+
+IF @brand == "a" THEN
+    SET @findADealer = Concat(@brandsite,'find-dealer')
+    SET @contactBrandLink = Concat('https://fcacommunity.force.com/AlfaRomeo','/s/')
+    SET @getIncentives = Concat(@brandsite,'car-shopping/current-offers')
+ELSEIF @brand == "d" THEN
+    SET @getIncentives = Concat(@brandsite,'vehicle-selector.incentives.html?app=incentives')
+    SET @social_ig = "https://www.instagram.com/dodgeofficial/"
+ELSEIF @brand == "j" THEN
+    SET @social_yt = Concat('https://www.youtube.com/',@brandNameLinks)
+ELSEIF @brand == "r" THEN
+    SET @social_yt = Concat('https://www.youtube.com/',@brandNameLinks)
+    SET @social_fb = "https://www.facebook.com/RamTrucks"
+    SET @social_tw = "https://twitter.com/ramtrucks"
+    SET @social_ig = "https://www.instagram.com/ramtrucks/"
+    SET @social_tt = "https://www.tiktok.com/@ramtrucks"
+ELSEIF @brand == "w" THEN
+    SET @contactBrandName = "Wagoneer"
+    SET @searchInventory = "https://www.jeep.com/vehicle-selector.sni.html?app=sni"
+    SET @getIncentives = Concat(@brandsite_alter,'vehicle-selector.incentives.html')
+    SET @findADealer = Concat(@brandsite_alter,'find-dealer.html')
+    SET @contactBrandLink = Concat('https://fcacommunity.force.com/Wagoneer','/s/')
+
+    SET @copyrightBrandLink = 'https://www.jeep.com/crossbrand_us/copyright'
+    SET @privacyBrandLink = 'https://www.jeep.com/crossbrand_us/privacy'
+
+    SET @social_yt = 'https://www.youtube.com/playlist?list=PLvULN5PwSSrsKTexgVWzGUjpuPjYxdyaX'
+
+ENDIF
+
+
+
+]%%
+
+
+<!-- Mobile -->
+                                <!--[if !mso]><!-->
+                                <tr style="max-height: 0px; overflow: hidden; display: none;" class="show">
+                                    <td class="show darkmodeBG" align="center" valign="middle" style="max-height: 0px; overflow: hidden; display: none; padding:30px 0;"><a alias="footer_logo_mobile" href="%%=RedirectTo(concat(@brandsite,@queryString,'&cta=logo_footer'))=%%" target="_blank"> <img class="wagoneer-logo" src="%%=v(@footerBrandLogo)=%%" border="0" alt="%%[IF @brand =='w' THEN]%%%%=v(@contactBrandName)=%% by Jeep%%[ELSE]%%%%=v(@brandNameToDisplay)=%%%%[ENDIF]%%%%[IF(IndexOf(Lowercase(N_BRND), 'commercial') > 0) THEN]%% Commercial%%[ENDIF]%% Brand" width="%%=v(@footerLogoSize)=%%" /> </a></td>
+                                </tr>
+                                <!--<![endif]-->
+                                <!-- END :: Mobile -->
+
+                                <!-- FOOTER NAV LINKS --> 
+                                %%[IF(v(@isFooterWithNav)) Then]%% 
+                                <tr>
+                                    <td align="center" valign="top" class="footer_links" style="font-size: 11px; line-height: 18px; ms-line-height-rule: exactly; padding:25px 0px 0px;min-width: 100%;">
+                                        <font style="font-family: Roboto, Arial, Helvetica, 'sans-serif'"> %%[IF(Length(Trim(v(@brandNameNav))) > 0) THEN]%% 
+                                            <a alias="textlink_brandsite" href="%%=RedirectTo(concat(@brandsite,@queryString,'&cta=textlink_brandsite'))=%%" target="_blank" style="color: %%=v(@footerColor)=%%; text-decoration: underline; text-transform:lowecase;" class="mobile_links">%%=v(@brandNameNav)=%%.com</a> <span class="hide"> &nbsp; </span> 
+                                            %%[ENDIF]%% 
+                                            %%[IF( Length(Trim(v(@buyingProcess))) > 0) THEN]%% 
+                                            <a alias="textlink_shoponline" href="%%=RedirectTo(concat(@buyingProcess,@queryString,'&cta=textlink_shoponline'))=%%" target="_blank" style="color: %%=v(@footerColor)=%%; text-decoration: underline;" class="mobile_links">Shop Online</a> <span class="hide"> &nbsp; </span> 
+                                            %%[ENDIF]%% 
+                                            %%[IF( Length(Trim(v(@searchInventory))) > 0) THEN]%% 
+                                            <a alias="textlink_searchinventory" href="%%=RedirectTo(concat(@searchInventory,@queryString,'&cta=textlink_searchinventory'))=%%" target="_blank" style="color: %%=v(@footerColor)=%%; text-decoration: underline;" class="mobile_links">Search inventory</a> <span class="hide"> &nbsp; </span> 
+                                            %%[ENDIF]%% 
+                                            %%[IF( Length(Trim(v(@getIncentives))) > 0) THEN]%% 
+                                            <a alias="textlink_getincentives" href="%%=RedirectTo(concat(@getIncentives,@queryString,'&cta=textlink_getincentives'))=%%" target="_blank" style="color: %%=v(@footerColor)=%%; text-decoration: underline;" class="mobile_links">Get incentives</a> <span class="hide"> &nbsp; </span> 
+                                            %%[ENDIF]%% 
+                                            %%[IF( Length(Trim(v(@findADealer))) > 0) THEN]%% 
+                                            <a alias="textlink_findadealer" href="%%=RedirectTo(concat(@findADealer,v(IIf(@brand == 'r' or @brand == 'a', @queryStringNoBRND, @queryString)),'&cta=textlink_findadealer'))=%%" target="_blank" style="color: %%=v(@footerColor)=%%; text-decoration: underline;" class="mobile_links">Find a dealer</a> <span class="hide"> &nbsp; </span> 
+                                            %%[ENDIF]%% 
+                                            %%[IF( Length(Trim(v(@navLastLinkText))) > 0) THEN]%% 
+                                            <a alias="textlink_merchandise" href="%%=RedirectTo(concat(@navLastLinkURL,@queryString,'&cta=textlink_merchandise'))=%%" target="_blank" style="color: %%=v(@footerColor)=%%; text-decoration: underline;" class="mobile_links">%%=v(@navLastLinkText)=%%</a> 
+                                            %%[ENDIF]%% 
+                                        </font>
+                                    </td>
+                                </tr> 
+                                %%[ENDIF]%%
+                                <!-- END :: Nav links -->
+                                <tr>
+                                    <td class="hide" align="center" valign="middle" style="padding:25px 0 20px;">
+                                        <!-- Desktop Logo -->
+                                        <a alias="logo_footer" href="%%=RedirectTo(concat(@brandsite,@queryString,'&cta=logo_footer'))=%%" target="_blank"> <img src="%%=v(@footerBrandLogo)=%%" border="0" alt="%%[IF @brand =='w' THEN]%%%%=v(@contactBrandName)=%% by Jeep%%[ELSE]%%%%=v(@brandNameToDisplay)=%%%%[ENDIF]%%%%[IF(IndexOf(Lowercase(N_BRND), 'commercial') > 0) THEN]%% Commercial%%[ENDIF]%% Brand" width="%%=v(@footerLogoSize)=%%" /> </a>
+                                    </td>
+                                    <!-- END :: Desktop Logo -->
+                                </tr>
+                                <tr class="hide">
+                                    <td align="center" style="color: %%=v(@footerColor)=%%; font-size: 12px">
+                                        <!-- Desktop copy -->
+                                        %%[IF @brand == "w" THEN]%%
+                                            <font style="font-family: 'Times New Roman', 'Times Roman', 'serif';">
+                                        %%[ELSE]%%
+                                            <font style="font-family: Roboto, Arial, Helvetica, 'sans-serif'">
+                                        %%[ENDIF]%%
+                                        Keep up with %%[IF N_BRND != 'Wagoneer' THEN]%%the %%=v(@brandNameToDisplay)=%% %%[ELSE]%%Wagoneer%%[ENDIF]%% %%[IF N_BRND != 'Wagoneer' THEN]%%Brand%%[ENDIF]%% here:</font>
+                                        <!-- END :: Desktop copy -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:10px 0 30px;">
+                                        <!-- Social Icons -->
+                                        <table align="center" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                            <tr>
+                                               %%[IF N_BRND == "Ram" THEN]%% 
+                                               <td valign="top" align="left" style="padding-right: 3px"><a alias="tiktoklink" href="%%=RedirectTo(@social_tt)=%%" target="_blank"><img src="%%=v(@tiktokLink)=%%" alt="Visit us on Tiktok" width="35" height="35" style="display:block; text-align:center;" border="0" class="social" /></a></td>
+                                               %%[ENDIF]%% 
+                                               %%[IF N_BRND == "Ram Commercial" THEN]%%
+                                                <td valign="top" align="left" style="padding-right: 3px"><a alias="linkedinlink" href="%%=RedirectTo(@social_in)=%%" target="_blank"><img src="%%=v(@linkedinLink)=%%" alt="Visit us on LinkedIn" width="35" height="35" style="display:block; text-align:center;" border="0" class="social" /></a></td>
+                                                %%[ENDIF]%% 
+                                                <td valign="top" align="left" style="padding-right: 3px"><a alias="facebooklink" href="%%=RedirectTo(@social_fb)=%%" target="_blank"><img src="%%=v(@facebookLink)=%%" alt="Visit us on Facebook" width="35" height="35" style="display:block; text-align:center;" border="0" class="social" /></a></td>
+                                                 <td valign="top" align="left" style="padding-right:3px;"><a alias="twitterlink" href="%%=RedirectTo(@social_tw)=%%" target="_blank"><img src="%%=v(@twitterLink)=%%" alt="Visit us on X" width="35" height="35" style="display:block; text-align:center" border="0" class="social" /></a></td>
+                                                <td valign="top" align="left" style="padding-right:3px;"><a alias="instagramlink" href="%%=RedirectTo(@social_ig)=%%" target="_blank"><img src="%%=v(@instagramLink)=%%" alt="Visit us on Instagram" width="35" height="35" style="display:block; text-align:center;" border="0" class="social" /></a></td>
+                                                %%[IF @brand != "r" THEN]%%
+                                                <td valign="top" align="left"><a alias="youtubelink" href="%%=RedirectTo(@social_yt)=%%" target="_blank"><img src="%%=v(@youtubeLink)=%%" alt="Visit us on YouTube" width="35" height="35" style="display:block; text-align:center;" border="0" class="social" /></a></td>
+                                                %%[ENDIF]%% 
+                                            </tr>
+                                        </table>
+                                        <!-- END :: Social Icons -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0 20px 20px; color: %%=v(@footerColor)=%%; font-size: 11px; line-height: 15px; ms-line-height-rule: exactly; text-align: center">
+                                        <font style="font-family: Roboto, Arial, Helvetica, 'sans-serif'">
+                                            <a alias="textlink_contact" href="%%=RedirectTo(concat(@contactBrandLink,@queryString,'&cta=textlink_contact'))=%%" target="_blank" style="color: %%=v(@footerColor)=%%; text-decoration: underline;">Contact %%[IF @brand == 'w' THEN]%% %%=v(@contactBrandName)=%%%%[ELSE]%%%%=v(@brandNameToDisplay)=%%%%[ENDIF]%%</a> &nbsp;&nbsp; <a alias="textlink_privacy" href="%%=RedirectTo(concat(@privacyBrandLink,@queryString,'&cta=textlink_privacy'))=%%" target="_blank" style="color: %%=v(@footerColor)=%%; text-decoration: underline;">Privacy</a> &nbsp;&nbsp; <a alias="textlink_copyright" href="%%=RedirectTo(concat(@copyrightBrandLink,@queryString,'&cta=textlink_copyright'))=%%" target="_blank" style="color: %%=v(@footerColor)=%%; text-decoration: underline;">Copyright</a></font>
+                                    </td>
+                                </tr>

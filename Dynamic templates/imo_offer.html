@@ -1,0 +1,473 @@
+<!-- imo_offer -->
+
+
+%%[
+
+VAR @offer_type, @combined_amount, @private_amount, @private_exp, @regional_amount, @reginal_exp, @firstname, @lastname, @cert, @zipcode
+
+SET @offer_type = ProperCase([OFFER_TYPE])
+SET @combined_amount = [COMBINED_AMOUNT]
+SET @private_amount = [PRIVATE_AMOUNT]
+SET @private_exp = [PRIVATE_EXP_DATE]
+SET @regional_amount = [REGIONAL_AMOUNT]
+SET @reginal_exp = [REGIONAL_EXP_DATE]
+SET @firstname = [N_PERSN_FIRST]
+SET @lastname = [N_PERSN_LAST]
+SET @zipcode = [ZIPCODE]
+SET @cert = [REDEMPTION_CODE]
+
+
+VAR @offer_header, @offer_subheader, @offer_padding, @po_copy, @po_padding, @regional_copy, @offer_bg, @private_offer_color, @border_offer_color, @offer_font_color, @cta_offer_img, @incentive_image, @with_img_d, @with_img_m, @with_size, @offer_cta_size, @current_offers_link, @private_offer_hdl_color, @offer_hdl_text_transform, @font_weight_bonus
+
+SET @offer_font_color = "#221f1f"
+SET @private_offer_color = "#221f1f"
+SET @with_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_with.png"
+SET @with_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_width_mob.png"
+SET @with_size = "36"
+SET @offer_cta_size = "182"
+SET @offer_hdl_text_transform = "uppercase"
+SET @font_weight_bonus = "bold"
+
+/* CURRENT OFFERS LINK FOR RAM, CHRYSLER, JEEP */
+SET @current_offers_link = Concat(@brandsite,'lineup.incentives.html')
+
+IF @offer_type == "Dual" THEN
+
+    IF @brand == "c" OR @brand == "d" OR @brand == "j" OR @brand == "w" THEN
+        SET @regional_copy = TreatAsContent("National offer good through<br> %%=v(@reginal_exp)=%%")
+        SET @po_copy = TreatAsContent("<strong>Private offer good through<br> %%=v(@private_exp)=%%</strong>")
+    ELSE
+        SET @regional_copy = TreatAsContent("National offer good<br> through %%=v(@reginal_exp)=%%")
+        SET @po_copy = TreatAsContent("<strong>Private offer good<br> through %%=v(@private_exp)=%%</strong>")
+    ENDIF
+
+    SET @po_padding = "5px 5px 10px"
+ELSE
+    SET @regional_copy = "See dealer for details"
+    SET @po_padding = "10px 0"
+ENDIF
+
+SET @private_offer_hdl_color = "000000"
+
+IF @brand == "a" THEN
+    SET @private_offer_color = "#981e32"
+    SET @border_offer_color = "#981e32"
+    SET @cta_offer_img = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_alfa_btn_offers.png"
+    SET @incentive_image = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_alfa_public_incentive.png"
+    SET @with_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_alfa_with.png"
+
+    /* CURRENT OFFERS LINK */
+    SET @current_offers_link = Concat(@brandsite,'car-shopping/current-offers')
+
+    IF @offer_type == "Dual" THEN
+
+        SET @offer_header = "<strong>ADD UP THE</strong> <em>PASSION</em>"
+        SET @offer_padding = "25px 0 3px"
+        SET @offer_font = "23px"
+
+    ELSE
+
+        SET @offer_header = "<strong>Discover your total bonus cash allowance</strong><br><em>when you combine</em>"
+        SET @offer_padding = "25px 0"
+        SET @offer_font = "21px"
+        SET @class_offer = "offer_hdr_c"
+        IF @offer_version == "116018" THEN
+            SET @po_copy = TreatAsContent("<strong>GOOD ON SELECT 2023<br>ALFA ROMEO BRAND VEHICLES</strong><br>VALID THROUGH %%=v(@private_exp)=%%")
+        ELSE
+            SET @po_copy = TreatAsContent("<strong>GOOD ON SELECT 2023<br>ALFA ROMEO BRAND VEHICLES</strong><br>VALID THROUGH %%=v(@private_exp)=%%")
+        ENDIF
+
+    ENDIF
+
+ELSEIF @brand == "c" THEN
+    SET @border_offer_color = "#063e77"
+    SET @cta_offer_img = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_chrysler_btn_offers.png"
+    SET @incentive_image = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_chrysler_public_incentive.png"
+    SET @with_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_chrysler_with.png"
+    SET @with_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_chrysler_with_mob.png"
+    SET @with_size = "37"
+    IF @offer_type == "Dual" THEN
+
+        SET @offer_header = "<strong>ADD UP THE POSSIBILITIES</strong>"
+        SET @offer_padding = "25px 0 3px"
+        SET @offer_font = "23px"
+
+    ELSE
+
+        SET @offer_header = "<strong>Discover your total bonus cash&nbsp;allowance <br class='hide'>when you&nbsp;combine</strong>"
+        SET @offer_padding = "25px 0"
+        SET @offer_font = "20px"
+        SET @class_offer = "offer_hdr_c"
+        SET @po_copy = TreatAsContent("<strong>GOOD ON SELECT 2023<br>CHRYSLER BRAND VEHICLES</strong><br>VALID THROUGH %%=v(@private_exp)=%%")
+
+    ENDIF
+
+ELSEIF @brand == "d" THEN
+    SET @current_offers_link = Concat(@brandsite,'vehicle-selector.incentives.html?app=incentives')
+    SET @border_offer_color = "#e50000"
+    SET @cta_offer_img = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_dodge_btn_offers.png"
+    SET @incentive_image = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_dodge_public_incentive.png"
+    SET @with_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_dodge_with.png"
+    SET @offer_cta_size = "187"
+    IF @offer_type == "Dual" THEN
+
+        SET @offer_header = "<strong>ADD UP THE ADRENALINE</strong>"
+        SET @offer_padding = "25px 0 3px"
+        SET @offer_font = "23px"
+
+    ELSE
+
+        SET @offer_header = "<strong>Discover your total bonus cash allowance <br class='hide'>when you combine</strong>"
+        SET @offer_padding = "25px 0"
+        SET @offer_font = "21px"
+        SET @class_offer = "offer_hdr_d"
+        SET @po_copy = TreatAsContent("<strong>GOOD ON SELECT DODGE BRAND VEHICLES</strong><br>VALID THROUGH %%=v(@private_exp)=%%")
+
+    ENDIF
+ELSEIF @brand == "f" THEN
+    SET @private_offer_color = "#e70000"
+    SET @border_offer_color = "#e70000"
+    SET @cta_offer_img = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_fiat_btn_offers.png"
+    SET @incentive_image = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_fiat_public_incentive.png"
+    SET @with_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_fiat_with.png"
+
+    /* CURRENT OFFERS LINK */
+    SET @current_offers_link = Concat(@brandsite,'lineup.incentives.html?app=incentives')
+
+    IF @offer_type == "Dual" THEN
+
+    SET @offer_header = "<strong>Add up the </strong><em>Fun</em>"
+        SET @offer_padding = "25px 0 3px"
+        SET @offer_font = "23px"
+
+    ELSE
+
+        SET @offer_header = "<strong>Discover your total bonus cash ALLOWANCE</strong> <br><em>when you combine</em>"
+        SET @offer_padding = "25px 0"
+        SET @offer_font = "21px"
+        SET @class_offer = "offer_hdr_c"
+        SET @po_copy = TreatAsContent("GOOD ON 2023<br>FIAT<sup>&reg;</sup> 500X VEHICLES<br>VALID THROUGH %%=v(@private_exp)=%%")
+
+    ENDIF
+
+ELSEIF @brand == "j" THEN
+
+    SET @offer_bg = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_jeep_bg.jpg"
+    SET @border_offer_color = "#fcb82c"
+    SET @cta_offer_img = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_jeep_btn_offers.png"
+    SET @incentive_image = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_jeep_public_incentive.png"
+    
+    IF @offer_type == "Dual" THEN
+
+        SET @offer_header = "<strong>ADD UP THE ADVENTURE</strong>"
+        SET @offer_padding = "25px 0 3px"
+        SET @offer_font = "23px"
+
+    ELSE
+
+        SET @offer_header = "<strong>Discover your total bonus&nbsp;cash allowance<br>when you combine</strong>"
+        SET @offer_padding = "25px 0"
+        SET @offer_font = "21px"
+        SET @class_offer = "offer_hdr_c"
+
+        IF @offer_version == "116018" THEN
+            SET @po_copy = TreatAsContent("<strong>GOOD ON SELECT NEW 2023 JEEP<sub>&reg;</sub> <br>BRAND VEHICLES AND MOST NEW <br>2024 JEEP WRANGLER MODELS</strong><br><br>VALID THROUGH %%=v(@private_exp)=%%")
+        ELSE
+            SET @po_copy = TreatAsContent("<strong>GOOD ON SELECT NEW 2023 JEEP<sub>&reg;</sub> <br>BRAND VEHICLES AND MOST NEW<br>2024 JEEP WRANGLER MODELS</strong><br>VALID THROUGH %%=v(@private_exp)=%%")
+        ENDIF
+
+    ENDIF
+
+ELSEIF @brand == "r" THEN
+    SET @offer_bg = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_ram_bg.jpg"
+    SET @border_offer_color = "#700c01"
+    SET @cta_offer_img = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_ram_btn_offers.png"
+    SET @incentive_image = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_ram_public_incentive.png"
+    SET @with_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_ram_with.png"
+    SET @with_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_ram_with_mob.png"
+    SET @font_weight_bonus = "normal"
+
+    IF @offer_type == "Dual" THEN
+
+    SET @offer_header = "<strong>Add up the capability</strong>"
+        SET @offer_padding = "25px 0 3px"
+        SET @offer_font = "23px"
+
+    ELSE
+
+        SET @offer_header = "<strong>Discover your total bonus&nbsp;cash ALLOWANCE<br> when you combine</strong>"
+        SET @offer_padding = "25px 0 20px"
+        SET @offer_font = "21px"
+        SET @class_offer = "offer_hdr_c"
+        IF @offer_version == "116018" THEN
+            SET @po_copy = TreatAsContent("<strong>GOOD ON SELECT<br>2023 RAM BRAND VEHICLES</strong><br>VALID THROUGH %%=v(@private_exp)=%%")
+        ELSE
+            SET @po_copy = TreatAsContent("<strong>GOOD ON SELECT<br>2023 RAM BRAND VEHICLES</strong><br>VALID THROUGH %%=v(@private_exp)=%%")
+        ENDIF
+
+    ENDIF  
+
+    IF(IndexOf(Lowercase(N_BRND), 'commercial') > 0) THEN
+        SET @offer_bg = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_ramC_bg.jpg"
+        SET @border_offer_color = "#700c01"
+        SET @cta_offer_img = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_ramC_btn_offers.png"
+        SET @incentive_image = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_ramC_public_incentive.png"
+        SET @with_img_d = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_ramC_with.png"
+        SET @with_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_ramC_with_mob.png"
+        SET @font_weight_bonus = "normal"
+        
+            IF @offer_type == "Dual" THEN
+
+            SET @offer_header = "<strong>Add up the capability</strong><em>"
+                SET @offer_padding = "25px 0 3px"
+                SET @offer_font = "23px"
+
+            ELSE
+
+                SET @offer_header = "<strong>Discover your total bonus&nbsp;cash ALLOWANCE <br>when you combine</strong>"
+                SET @offer_padding = "25px 0 20px"
+                SET @offer_font = "21px"
+                SET @class_offer = "offer_hdr_c"
+                
+                IF @offer_version == "116018" THEN
+                    SET @po_copy = TreatAsContent("<strong>GOOD ON SELECT <br>2023 RAM BRAND VEHICLES</strong><br>VALID THROUGH %%=v(@private_exp)=%%")
+                ELSE
+                    SET @po_copy = TreatAsContent("<strong>GOOD ON SELECT<br>2023 RAM BRAND VEHICLES</strong><br>VALID THROUGH %%=v(@private_exp)=%%")
+                ENDIF
+
+            ENDIF
+    ENDIF
+                
+ELSEIF @brand == "w" THEN
+    set @private_offer_hdl_color = "#15255d"
+    SET @private_offer_color = "#15255d"
+    SET @border_offer_color = "#15255d"
+    SET @cta_offer_img = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_wagoneer_btn_offers.png"
+    SET @incentive_image = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/8/imo_wagoneer_public_incentive.png"
+    SET @with_img_m = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_wagoneer_with_mob.png"
+                
+    /* CURRENT OFFERS LINK */
+    SET @current_offers_link = Concat(@brandsite,'vehicle-selector.incentives.html')    
+                
+    SET @offer_hdl_text_transform = "none"
+                
+    IF @offer_type == "Dual" THEN
+        
+        SET @offer_header = "<strong>Expand Your Possibilities</strong>"
+        SET @offer_padding = "25px 0 3px"
+        SET @offer_font = "23px"
+
+    ELSE
+
+        SET @offer_header =  TreatAsContent("<strong>Discover Your Total Bonus&nbsp;Cash&nbsp;Allowance</strong><br><span style='color: #000000; font-size: 14px; text-transform: uppercase'><strong>when you combine</strong></span>")
+        SET @offer_padding = "25px 0"
+        SET @offer_font = "21px"
+        SET @class_offer = "offer_hdr_c"        
+        SET @po_copy = TreatAsContent("<strong>OFFER GOOD ON SELECT 2023 WAGONEER <br>OR GRAND WAGONEER MODELS</strong><br>VALID THROUGH %%=v(@private_exp)=%%")
+
+    ENDIF
+
+ELSE
+    RaiseError("Unable to recognize the brand", true)
+
+ENDIF
+
+]%%
+
+
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="offer_container" role="presentation">
+    <tr>
+        <td class="mobile-bg-switch" align="center" valign="top" background="%%=v(@offer_bg)=%%" bgcolor="#ffffff" style="margin:0 auto; background-size: 100% auto; background-position: bottom; background-repeat: no-repeat; height:250px">
+            %%[IF @brand == "j" OR @brand == "r" THEN]%%
+            <!--[if gte mso 9]>
+    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: 600px; height: 350px; background-size: cover; background-position: right; background-repeat: no-repeat;">
+    <v:fill type="frame" src="%%=v(@offer_bg)=%%" color="#ffffff" style="width: 600px; height: 350px;"/>
+    <v:textbox inset="0,0,0,0">
+<![endif]-->
+    %%[ENDIF]%%
+    <div>
+        <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="email_container" style="margin: 0 auto;" role="presentation">
+    <tr>
+        <td align="center" valign="top" style="padding: %%=v(@offer_padding)=%%; font-size: %%=v(@offer_font)=%%;text-transform: %%=v(@offer_hdl_text_transform)=%%; color: %%=v(@private_offer_hdl_color)=%%" class="%%=v(@class_offer)=%%">
+            <font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';">%%=v(@offer_header)=%%</font>
+        </td>
+    </tr>
+    %%[ IF @offer_type == "Dual" THEN ]%%
+    <tr>
+        <td align="center" valign="top" style="padding: 0 0 25px;  font-size: 14px; line-height: 18px; text-transform: uppercase;" class="offer_subhead">
+            <font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';">Enjoy a total $%%=v(@combined_amount)=%% bonus cash allowance<br>when you combine</font>
+        </td>
+    </tr>
+
+    %%[ ENDIF ]%% 
+</table>
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" role="presentation" >
+    
+        <tr>
+            <!-- LEFT COLUMN PRIVATE OFFER -->
+            <td align="center" valign="middle" style="padding-bottom: 40px;" class="force_col offer_mob_pad">
+                <table border="0" cellspacing="0" cellpadding="0" role="presentation" align="center" class="email_container">
+                    
+                        <tr>
+                            <td align="center" style="font-weight: bold; font-size: 14px; line-height: 14px; text-transform: uppercase; color: %%=v(@offer_font_color)=%%">
+                                <font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';">YOUR PRIVATE</font>
+                            </td>
+                        </tr>
+
+                        <!-- CASH ALLOWANCE AMOUNT -->
+                        %%[ IF @offer_type == "Dual" THEN ]%%
+                        <tr>
+                            <td align="center" valign="top" style="font-size: 37px;font-weight: bold; color: %%=v(@private_offer_color)=%%">
+                                <font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';"><sup style="font-size:18px;">$</sup>%%=v(@private_amount)=%%</font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="padding: 0 0 5px; font-size: 15px; font-weight: %%=v(@font_weight_bonus)=%%;text-transform: uppercase;">
+                                <font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';">bonus cash allowance<sup>1</sup></font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation" class="mobile-border">
+                                    <tr>
+                                      <td style="border-bottom:1px solid #000000; padding-bottom:5px;"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        %%[ ELSE ]%% 
+                        <tr>
+                            <td align="center" valign="top">
+                                 %%[IF @brand == 'd' OR @brand == 'j' OR @brand == 'd' OR @brand == 'r' OR @brand == 'w' THEN ]%%
+                                <table border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                    <tr>
+                                      <td valign="top" style="font-size: 37px;font-weight: bold; color: %%=v(@private_offer_color)=%%"><font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';"><sup style="font-size:18px;">$</sup>%%=v(@private_amount)=%%</font>
+                                      </td>
+                                      <td align="center" valign="middle" style="font-size: 14px; font-weight: %%=v(@font_weight_bonus)=%%; text-transform: uppercase; padding: 0 0 0 5px; line-height: 15px; text-align: left;"><font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';">bonus cash<br>allowance<sup>1</sup></font>
+                                      </td>
+                                    </tr>
+                                </table>
+                                    %%[ELSE]%%
+                                    <table border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                    <tr>
+                                      <td align="center" valign="top" style="font-size: 37px;font-weight: bold; color: %%=v(@private_offer_color)=%%"><font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';"><sup style="font-size:18px;">$</sup>%%=v(@private_amount)=%%</font>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" valign="top" style="font-size: 14px; font-weight: %%=v(@font_weight_bonus)=%%; text-transform: uppercase; padding: 0 0 0 5px; line-height: 15px; text-align: left;"><font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';">bonus cash allowance<sup>1</sup></font>
+                                      </td>    
+                                    </tr>
+                                </table>
+                                    
+                                    %%[ENDIF]%%
+                                  
+                                
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation" class="mobile-border">
+                                    <tr>
+                                      <td style="border-bottom:1px solid #000000; padding-bottom:5px;"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        %%[ ENDIF ]%% 
+                        <!-- END CASH ALLOWANCE AMOUNT -->
+
+                        <!-- VALID THROUGH EXP DATES -->
+                        <tr>
+                            <td align="center" style="padding: %%=v(@po_padding)=%%; font-size: 11px; line-height: 16px; text-transform: uppercase; ">
+                                <font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';">%%=v(@po_copy)=%%</font>
+                            </td>
+                        </tr>
+                    
+                </table>
+                
+                <!-- CERT CODE BOX-->
+                <table border="0" cellspacing="0" cellpadding="0" role="presentation" width="auto" align="center">
+                    <tr>
+                        <td align="center" valign="middle" style="padding: 10px; border: 2px solid %%=v(@border_offer_color)=%%; background-color: #ffffff; color: #000000; font-size: 11px; line-height: 14px;">
+                            <font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';"> %%=v(@firstname)=%% %%=v(@lastname)=%% %%=v(@zipcode)=%%<br><!--copy TBD--> REDEMPTION CODE: %%=v(@cert)=%% </font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <!-- END LEFT COLUMN PRIVATE OFFER -->
+
+            <!-- DIVIDER LINE -->
+            <td align="center" valign="top" class="force_col_center">
+                <img src="%%=v(@with_img_d)=%%" alt="With" border="0" width="%%=v(@with_size)=%%" class="hide">
+                <!-- Mobile -->
+                <!--[if !mso]><!-->
+                <img src="%%=v(@with_img_m)=%%" alt="With" border="0" style="max-height: 0px; overflow: hidden; display: none;" class="show offer_with">
+                <!--<![endif]-->
+                <!-- END :: Mobile -->
+            </td>
+            <!-- END DIVIDER LINE -->
+
+            <!-- RIGHT COLUMN -->
+            <td align="center" valign="middle" style="padding-bottom: 40px;" class="force_col offer_mob_pad">
+                <table border="0" cellspacing="0" cellpadding="0" role="presentation" width="" class="email_container">
+                    
+                        %%[ IF @offer_type == "Dual" THEN ]%%
+                        <tr>
+                            <td align="center" style="font-weight: bold; font-size: 14px; line-height: 14px; text-transform: uppercase; color: %%=v(@offer_font_color)=%%">
+                                <font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';">AN ADDITIONAL</font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top" style="font-size: 37px; font-weight: bold; color: %%=v(@private_offer_color)=%%">
+                                <font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';"><sup style="font-size:18px;">$</sup>%%=v(@regional_amount)=%%</font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="padding:3px 0 5px; font-size: 13px; line-height: 14px; font-weight: %%=v(@font_weight_bonus)=%%;text-transform: uppercase; color: %%=v(@offer_font_color)=%%;">    
+                                <font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';">
+                                    %%[ IF @brand == 'c' THEN]%%
+                                    <span style="font-weight: normal">public BONUS<br> cash allowance<sup>2</sup></span><br><span style="font-size: 11px">See dealer for details</span>
+                                    %%[ELSE]%%
+                                    public BONUS cash allowance<sup>2</sup><br><span style="font-size: 11px"><strong>See dealer for details</strong></span>
+                                    %%[ENDIF]%%
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation" class="mobile-border">
+                                    <tr>
+                                      <td style="border-bottom:1px solid #000000; padding-bottom:5px;"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        %%[ ELSE ]%% 
+                        <tr>
+                            <td align="center" style="padding-bottom: 5px; "><img src="%%=v(@incentive_image)=%%" alt="Most Public Incentives" border="0" width="169"></td>
+                        </tr>
+                        %%[ ENDIF ]%% 
+                        <tr>
+                            <td class="offer_pad_cta" align="center" style="padding: 5px 5px 10px; font-size: 11px; font-weight: normal;text-transform: uppercase; color: %%=v(@offer_font_color)=%% ">
+                                <font style="font-family: %%=v(@font_style)=%%, Arial, Helvetica, 'sans-serif';"><strong>%%=v(@regional_copy)=%%</strong></font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="line-height: 0px; padding-bottom: 3px;"><a alias="button_view_current_offers" href="%%=RedirectTo(concat(@current_offers_link,@queryString,'&cta=button_view_current_offers'))=%%" target="_blank"><img src="%%=v(@cta_offer_img)=%%" alt="View all current offers" width="%%=v(@offer_cta_size)=%%" border="0"></a></td>
+                        </tr>
+                    
+                </table>
+            </td>
+            <!-- END RIGHT COLUMN -->
+        </tr>
+    
+</table>
+
+    </div>
+    %%[IF @brand == "j" OR @brand == "r" THEN]%%
+    <!--[if gte mso 9]>
+        </v:textbox>
+        </v:rect>
+        <![endif]-->
+    %%[ENDIF]%%        
+        </td>
+    </tr>
+</table>
+
+

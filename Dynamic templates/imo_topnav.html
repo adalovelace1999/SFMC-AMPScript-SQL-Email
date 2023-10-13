@@ -1,0 +1,74 @@
+
+<!-- imo_topnav-->
+
+%%[
+
+
+/* VIEW ONLINE LINK COLOR AND BG COLOR - CAN ALSO BE USED FOR TOP HEADER/NAV */
+VAR @headeBGcolor, @headerLinkColor
+
+SET @headeBGcolor = "#FFFFFF"
+SET @headerLinkColor = "#000000"
+
+
+VAR @getIncentives, @findADealer
+
+
+/* @brandsite and @brandNameLinks is defined within index.html*/
+
+SET @getIncentives = Concat(@brandsite,'lineup.incentives.html')
+SET @findADealer = Concat(@brandsite,'find-dealer.html')
+
+IF @brand == "a" THEN
+    SET @getIncentives = Concat(@brandsite,'car-shopping/current-offers')
+    SET @findADealer = Concat(@brandsite,'find-dealer')
+
+ELSEIF @brand == "d" THEN
+    SET @getIncentives = Concat(@brandsite,'vehicle-selector.incentives.html?app=incentives')
+
+ELSEIF @brand == "f" THEN
+    SET @getIncentives = Concat(@brandsite,'lineup.incentives.html?app=incentives')
+    
+ELSEIF @brand == "w" THEN
+    SET @getIncentives = Concat(@brandsite,'vehicle-selector.incentives.html')
+
+ENDIF
+
+
+
+]%%
+
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="email_container" style="margin: 0 auto;" role="presentation">
+        <tr>
+            <td style="background-color: %%=v(@headeBGcolor)=%%; padding:0 15px;">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: %%=v(@headeBGcolor)=%%;" role="presentation">
+           
+                        <tr>
+                            <td valign="middle" align="left" style="font-size: 11px;mso-line-height-rule:exactly;line-height:11px;">
+                                <a alias="view_email_online" href="%%view_email_url%%" class="hide" style="color: %%=v(@headerLinkColor)=%%; text-decoration: underline;font-family: Arial, Helvetica, 'sans-serif';">View this email online</a>
+                            </td>
+       <td width="20">&nbsp;</td>
+                            <td class="hide" align="right">
+                                <table height="47" role="presentation" border="0" cellspacing="0" cellpadding="0" align="right" class="hide">
+                                    <tr>
+                                        <td align="center" height="17" class="hide" style="mso-line-height-rule: exactly; line-height:17px">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="hide" align="center" style="padding: 0 5px; border-right: 1px solid #000000; font-size:10px; mso-line-height-rule:exactly;line-height: 10px;"><a alias="textlink_currentoffers" href="%%=RedirectTo(concat(@getIncentives,@queryString,'&cta=textlink_currentoffers'))=%%" target="_blank" style="color: #000000; text-decoration: underline; font-weight:bold; font-family: Arial, Helvetica, 'sans-serif';">CURRENT OFFERS</a>
+                                        </td>
+                                        <td class="hide" align="center" style="padding: 0 5px; border-right: 1px solid #000000; font-size:10px; mso-line-height-rule:exactly;line-height: 10px;"><a alias="textlink_fad" href="%%=RedirectTo(concat(@findADealer,v(IIf(@brand == 'r' or @brand == 'a', @queryStringNoBRND, @queryString)),'&cta=textlink_fad'))=%%" target="_blank" style="color: #000000; text-decoration: underline; font-weight:bold; font-family: Arial, Helvetica, 'sans-serif';">FIND A DEALER</a>
+                                        </td>
+                                        <td class="hide" align="center" style="padding: 0 5px; font-size:10px; mso-line-height-rule:exactly;line-height: 10px;"><a alias="textlink_shop_online" href="%%=RedirectTo(concat(@buyingProcess,@queryString,'&cta=textlink_shop_online'))=%%" target="_blank" style="color: #000000; text-decoration: underline; font-weight:bold; font-family: Arial, Helvetica, 'sans-serif';">SHOP ONLINE</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" height="15" class="hide" style="mso-line-height-rule: exactly; line-height:15px">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+            
+                </table>
+            </td>
+        </tr>
+</table>

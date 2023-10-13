@@ -1,0 +1,64 @@
+/*
+%%[
+
+
+    var @COMMUNICATION_ID, @QUERY_STRING_RK_ID, @QUERY_STRING_PLAN_OWNER_ID
+    set @COMMUNICATION_ID = Concat(_emailid,"|",jobid,"|",_JobSubscriberBatchID)
+    set @QUERY_STRING_RK_ID = Trim(@RK_ID)
+    set @QUERY_STRING_PLAN_OWNER_ID = Trim(@PLAN_OWNER_ID)
+
+    var @DE_PROGRAM_NAME, @EM_PROGRAM_NAME, @QS_PROGRAM_NAME
+    set @DE_PROGRAM_NAME = AttributeValue("PROGRAM_NAME")
+    set @EM_PROGRAM_NAME = @CUSTOM_PROGRAM_NAME
+
+    IF Empty(@DE_PROGRAM_NAME) AND Empty(@EM_PROGRAM_NAME) THEN
+      set @QS_PROGRAM_NAME = "Institutional"
+    ELSEIF Not Empty(@EM_PROGRAM_NAME) THEN
+       set @QS_PROGRAM_NAME = Trim(@CUSTOM_PROGRAM_NAME)
+    ELSEIF Empty(@DE_PROGRAM_NAME) THEN
+       set @QS_PROGRAM_NAME = "NONE"
+    ELSE
+       set @QS_PROGRAM_NAME = Trim(@DE_PROGRAM_NAME)
+    ENDIF
+
+
+    var @DE_EMAIL_TYPE, @EM_EMAIL_TYPE, @QS_EMAIL_TYPE
+    set @DE_EMAIL_TYPE = AttributeValue("EMAIL_TYPE")
+    set @EM_EMAIL_TYPE = @CUSTOM_EMAIL_TYPE
+
+    IF Not Empty(@EM_EMAIL_TYPE) THEN
+       set @QS_EMAIL_TYPE = Trim(@CUSTOM_EMAIL_TYPE)
+    ELSEIF Empty(@DE_EMAIL_TYPE) THEN
+       set @QS_EMAIL_TYPE = "INST_NONE"
+    ELSE
+       set @QS_EMAIL_TYPE = Trim(@DE_EMAIL_TYPE)
+    ENDIF
+
+
+    var @DE_CONTENT_TYPE, @EM_CONTENT_TYPE, @QS_CONTENT_TYPE
+    set @DE_CONTENT_TYPE = AttributeValue("CONTENT_TYPE")
+    set @EM_CONTENT_TYPE = @CUSTOM_CONTENT_TYPE
+
+    IF Not Empty(@EM_CONTENT_TYPE) THEN
+       set @QS_CONTENT_TYPE = Trim(@CUSTOM_CONTENT_TYPE)
+    ELSEIF Empty(@DE_CONTENT_TYPE) THEN
+       set @QS_CONTENT_TYPE = "INST_NONE"
+    ELSE
+       set @QS_CONTENT_TYPE = Trim(@DE_CONTENT_TYPE)
+    ENDIF
+
+    set @QUERY_STRING = Concat("&s_cid=em:",Trim(@QUERY_STRING_RK_ID),":",Trim(@QUERY_STRING_PLAN_OWNER_ID),":",@QS_PROGRAM_NAME,":",@QS_EMAIL_TYPE,":",@QS_CONTENT_TYPE,":",@COMMUNICATION_ID)
+    set @QUERY_STRING = Replace(@QUERY_STRING," ","")
+
+  var @PROGRAM_NAME, @EMAIL_TYPE, @CONTENT_TYPE
+
+  set @PROGRAM_NAME = @QS_PROGRAM_NAME
+  set @EMAIL_TYPE = @QS_EMAIL_TYPE
+  set @CONTENT_TYPE = @QS_CONTENT_TYPE
+
+var @edit_email_prefs_url
+set @edit_email_prefs_url = profile_center_url
+
+]%%
+
+*/

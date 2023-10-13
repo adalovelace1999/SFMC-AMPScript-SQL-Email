@@ -1,0 +1,33 @@
+/*
+
+%%[
+
+// Global function for inserting an error into ET Error Log.
+
+	Required Params:
+		@ERROR_CATEGORY (string - ERROR, INCIDENT, WARNING)
+		@ERROR_TYPE (string)
+		@ERROR_DETAIL (string)
+
+
+
+	InsertDE("ET_ERROR_LOG",
+		"USER_ID", @USER_ID,
+		"EmailID", _emailid,
+		"EMAIL_LOG_ID", EMAIL_LOG_ID,
+		"EmailName", emailname_,
+		"BRAND_ID", @BRAND_ID,
+		"RK_ID", @RK_ID,
+		"JobID", jobid,
+		"BatchID", _JobSubscriberBatchID,
+		"ERROR_DETAIL", @ERROR_DETAIL,
+		"ERROR_CATEGORY", @ERROR_CATEGORY,
+		"ERROR_TYPE", @ERROR_TYPE,
+		"SPONSOR_NAME", @SPONSOR_NAME,
+		"DATA_SOURCE", _DataSourceName,
+		"BRAND_ID", @BRAND_ID
+	)
+
+]%%
+
+*/

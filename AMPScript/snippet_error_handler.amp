@@ -1,0 +1,136 @@
+/* 
+
+%%[
+
+
+IF Empty(@USER_LOGIN_TOKEN) THEN
+
+    set @ERROR_TYPE = "Data Extension Initialization"
+    set @ERROR_CATEGORY = "ERROR"
+    set @ERROR_DETAIL = "DATA_EXTENSION_INIT - USER_LOGIN_TOKEN not found"
+    ContentBlockByName("Content Builder\Workplace\(3) Scripts\Function Scripts\INSERT_ERROR_LOG")
+    RaiseError("USER_LOGIN_TOKEN not found", true)
+ENDIF
+
+
+IF memberid == 6226223 AND (_messageContext == "PREVIEW" OR _IsTestSend) THEN
+
+ELSE
+
+    set @EMAIL_BRAND_VERIFY = @BRAND_ID_VERIFY
+    set @EMAIL_POID_VERIFY = @EXPECTED_PLAN_OWNER_ID
+
+
+
+     IF Empty(@EMAIL_BRAND_VERIFY) AND Empty(@EMAIL_POID_VERIFY) THEN
+
+        set @ERROR_TYPE = "Email Brand and POID verification"
+        set @ERROR_CATEGORY = "ERROR"
+        set @ERROR_DETAIL = "Email failed verification for Brand ID or Plan Owner ID check."
+        ContentBlockByName("Content Builder\Workplace\(3) Scripts\Function Scripts\INSERT_ERROR_LOG")
+        RaiseError("Email failed verification for presence of a Brand ID or Plan Owner ID check.")
+    endif
+
+    IF LowerCase(Trim(@BRAND_ID_VERIFY)) != LowerCase(Trim(@BRAND_ID)) AND NOT Empty(@BRAND_ID_VERIFY) THEN
+
+        set @ERROR_TYPE = "BRAND_ID verification"
+        set @ERROR_CATEGORY = "ERROR"
+        set @ERROR_DETAIL = Concat("Expected user's BRAND_ID to be ",@BRAND_ID_VERIFY," but user's BRAND_ID is ",@BRAND_ID,".")
+        ContentBlockByName("Content Builder\Workplace\(3) Scripts\Function Scripts\INSERT_ERROR_LOG")
+        RaiseError(Concat("Expected user's BRAND_ID to be ",@BRAND_ID_VERIFY," but user's BRAND_ID is ",@BRAND_ID,"."),true)
+    endif
+
+    IF LowerCase(Trim(@EXPECTED_PLAN_OWNER_ID)) != LowerCase(Trim(@PLAN_OWNER_ID)) AND NOT Empty(@EXPECTED_PLAN_OWNER_ID) THEN
+
+        set @ERROR_TYPE = "@PLAN_OWNER_ID verification"
+        set @ERROR_CATEGORY = "ERROR"
+        set @ERROR_DETAIL = Concat("Expected user's PLAN_OWNER_ID to be ",@EXPECTED_PLAN_OWNER_ID," but user's PLAN_OWNER_ID is ",@PLAN_OWNER_ID,".")
+        ContentBlockByName("Content Builder\Workplace\(3) Scripts\Function Scripts\INSERT_ERROR_LOG")
+        RaiseError(Concat("Expected user's PLAN_OWNER_ID to be ",@EXPECTED_PLAN_OWNER_ID," but user's PLAN_OWNER_ID is ",@PLAN_OWNER_ID,"."),true)
+    endif
+
+   IF @EMAIL_ALLOWED != "true" THEN
+
+        set @ERROR_TYPE = "Sponsor does not permit email"
+        set @ERROR_CATEGORY = "ERROR"
+        set @ERROR_DETAIL = Concat(@SPONSOR_NAME," does not allow email communications.")
+        ContentBlockByName("Content Builder\Workplace\(3) Scripts\Function Scripts\INSERT_ERROR_LOG")
+        raiseError("CRITICAL ERROR: Sponsor does not allow email communications. Check EMAIL_ALLOWED field in SPONSOR_PROFILE.",true)
+   endif
+
+    set @rows = LookupRows("SPONSOR_EMAIL_SUPPRESSION","PLAN_OWNER_ID",@PLAN_OWNER_ID)
+    set @rowCount = rowcount(@rows)
+
+    IF @rowCount > 0 THEN
+
+    var @REFERENCE_ID
+
+    set @row = row(@rows,1)
+    set @REFERENCE_ID = field(@row,'REFERENCE_ID')
+
+        set @ERROR_TYPE = "Sponsor Email Suppression"
+        set @ERROR_CATEGORY = "ERROR"
+        set @ERROR_DETAIL = Concat(@SPONSOR_NAME," has temporarily suppressed all email per ",@REFERENCE_ID,".")
+        ContentBlockByName("Content Builder\Workplace\(3) Scripts\Function Scripts\INSERT_ERROR_LOG")
+        raiseError("CRITICAL ERROR: User's sponsor temporarily has all email suppressed. Check PLAN_OWNER_ID field in SPONSOR_EMAIL_SUPPRESSION.",true)
+    ENDIF
+
+ 
+      set @rows = LookupRows("SPONSOR_SUPPRESSION_BY_EMAIL_ID","PLAN_OWNER_ID",@PLAN_OWNER_ID,"EMAIL_ID",_emailID)
+      set @rowCount = rowcount(@rows)
+
+      IF @rowCount > 0 THEN
+
+      var @REFERENCE_ID
+
+      set @row = row(@rows,1)
+      set @REFERENCE_ID = field(@row,'REFERENCE_ID')
+
+           set @ERROR_TYPE = "Adhoc Sponsor Email Suppression"
+           set @ERROR_CATEGORY = "ERROR"
+           set @ERROR_DETAIL = Concat(@SPONSOR_NAME," asked to be removed from ",emailname_," per ",@REFERENCE_ID,".")
+           ContentBlockByName("Content Builder\Workplace\(3) Scripts\Function Scripts\INSERT_ERROR_LOG")
+           raiseError(Concat("CRITICAL ERROR: User's sponsor asked to be removed from ",emailname_,". Check PLAN_OWNER_ID and EMAIL_ID field in SPONSOR_SUPPRESSION_BY_EMAIL_ID."),true)
+      ENDIF
+
+    IF LowerCase(TRIM(@EMAIL_STATUS)) == "held" THEN
+
+        set @ERROR_TYPE = "Held email status"
+        set @ERROR_CATEGORY = "ERROR"
+        set @ERROR_DETAIL = Concat("User ",@USER_ID," has a held email status.")
+        ContentBlockByName("Content Builder\Workplace\(3) Scripts\Function Scripts\INSERT_ERROR_LOG")
+        raiseError("CRITICAL ERROR: User's email status is held. Check EMAIL_STATUS field in CUSTOMER_PROFILE.",true)
+    endif
+
+
+   IF @USER_STATUS == "O" THEN
+
+        set @ERROR_TYPE = "Obsolete user status"
+        set @ERROR_CATEGORY = "ERROR"
+        set @ERROR_DETAIL = Concat("User ",@USER_ID," has an obsolete status.")
+        ContentBlockByName("Content Builder\Workplace\(3) Scripts\Function Scripts\INSERT_ERROR_LOG")
+        raiseError("CRITICAL ERROR: User's status is obsolete. Check USER_STATUS field in CUSTOMER_PROFILE.",true)
+   endif
+
+IF Empty(TRIM(@OA_SUPPORT_PHONE)) THEN
+
+    set @ERROR_TYPE = "OA_SUPPORT_PHONE empty"
+    set @ERROR_CATEGORY = "ERROR"
+    set @ERROR_DETAIL = CONCAT("GLOBAL_DEFENSIVE_CONTROLS - POID: ",@PLAN_OWNER_ID," does not have an OA_SUPPORT_PHONE number")
+    RaiseError(@ERROR_DETAIL, true)
+    ContentBlockByName("Content Builder\Workplace\(3) Scripts\Function Scripts\INSERT_ERROR_LOG")
+
+ENDIF
+
+ IF Empty(TRIM(@MA_SUPPORT_HRS)) THEN
+
+     set @ERROR_TYPE = "MA_SUPPORT_HRS empty"
+     set @ERROR_CATEGORY = "WARNING"
+     set @ERROR_DETAIL = CONCAT("GLOBAL_DEFENSIVE_CONTROLS - POID: ",@PLAN_OWNER_ID," does not have MA_SUPPORT_HOURS")
+     ContentBlockByName("Content Builder\Workplace\(3) Scripts\Function Scripts\INSERT_ERROR_LOG")
+ ENDIF
+
+ENDIF
+
+]%%
+*/

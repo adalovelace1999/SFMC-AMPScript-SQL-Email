@@ -1,0 +1,333 @@
+%%[
+
+
+/* DYNAMIC LINK TRACKING */
+
+var @brandNameadid 
+SET @brandNameadid = [N_BRND]
+
+IF @brandNameadid == "Ram Commercial" THEN
+    set @brandNameadid = "RAM"
+ENDIF
+
+var @adid
+IF [N_BRND] == 'Wagoneer' THEN
+SET @adid = "2023_JEEP_BRND_INMARKETOWNEROCTWAGONEER_EM2"
+ELSE
+SET @adid = Concat("2023_",Uppercase(@brandNameadid),"_BRND_INMARKETOWNEROCT_EM2")
+ENDIF
+
+/* DO NOT CHANGE */
+
+var @queryString, @queryStringNoBRND                                     
+
+IF [N_BRND] == 'Wagoneer' THEN
+    SET @queryString = Concat(TreatAsContent("?channel=e_direct&brand=jeep&bid=crmus&pida=%%C_TRGT_GRP%%&pidb=%%C_TRGT_SUB_GRP%%&pid=%%C_SRCE%%&ctp=BRND&cid=%%I_Campaign%%&ofc=%%I_OFFR%%&ofv=%%I_OFFR_VERSN%%&crv=%%C_CREATV_VERSN%%&act=%%Outbound_ID%%&sgt=%%I_SGT%%&coin=%%I_CONSMR%%&adid="),@adid)
+ELSE
+    SET @queryString = Concat(TreatAsContent("?channel=e_direct&brand=%%N_BRND%%&bid=crmus&pida=%%C_TRGT_GRP%%&pidb=%%C_TRGT_SUB_GRP%%&pid=%%C_SRCE%%&ctp=BRND&cid=%%I_Campaign%%&ofc=%%I_OFFR%%&ofv=%%I_OFFR_VERSN%%&crv=%%C_CREATV_VERSN%%&act=%%Outbound_ID%%&sgt=%%I_SGT%%&coin=%%I_CONSMR%%&adid="),@adid)
+ENDIF
+
+SET @queryStringNoBRND = Concat(TreatAsContent("?channel=e_direct&bid=crmus&pida=%%C_TRGT_GRP%%&pidb=%%C_TRGT_SUB_GRP%%&pid=%%C_SRCE%%&ctp=BRND&cid=%%I_Campaign%%&ofc=%%I_OFFR%%&ofv=%%I_OFFR_VERSN%%&crv=%%C_CREATV_VERSN%%&act=%%Outbound_ID%%&sgt=%%I_SGT%%&coin=%%I_CONSMR%%&adid="),@adid)
+/* END OF DO NOT TOUCH*/
+
+/* HTML SECTION (SET CTA PARAMETER BASED ON THE LINK MATRIX AND ALIAS)
+<a alias="brandLink" href="%%=RedirectTo(concat(@brandsite,@queryString,'&cta=cta-brandSite'))=%%" target="_blank">URL</a>
+END OF HTML SECTION
+*/
+
+
+/*  FOOTER BG, FOOTER TEXT/LINK COLOR */
+var @footerBG, @footerColor
+
+/* UNSUBSCRIBE URL 
+var @profileCenterLink
+SET @profileCenterLink = CloudPagesURL(9600, 'CONSUMER_EMAIL', '%%Email_Address%%','SubscriptionID', '%%I_SUBSCRPN%%')*/
+
+
+/*  USED TO APPEND / CONCAT TO LINKS */
+var @brandNameLinks
+
+
+
+/* USED WITHIN BRAND SPECIFIC CONTENT */
+var @sl, @ph, @offer_version, @programID
+
+SET @offer_version = [I_OFFR]
+SET @programID = AttributeValue("PROGRAM_ID")
+
+
+/* ALL BRAND PERSONALIZATION NEEDS TO BE HERE */
+IF EMPTY(TRIM(N_BRND)) THEN
+RaiseError("Brand field cannot be blank", true)
+ENDIF 
+
+var @brand 
+SET @brand = Lowercase(Substring(N_BRND,1,1))
+
+var @font_style 
+SET @font_style = "Roboto"
+
+
+/* Third module mobile background switch */
+var @offer_bg_mob, @third_mob_bg_height
+
+/*  NAV CTAs*/
+var @zipcode, @eshopBrand, @buyingProcess
+
+SET @eshopBrand = Lowercase(N_BRND)
+SET @eshopBrand = replace(@eshopBrand,' ' ,'')
+
+
+IF @brand == "a" THEN
+
+    IF @offer_version == "116018" THEN
+
+  SET @SL = "Redeem your offer toward select new Alfa Romeo Brand vehicles"
+  SET @PH = "Stack your Bonus Cash Allowance toward one thrilling ride"
+
+ ELSE  
+/* SL and PH are the same for public and private */
+  SET @SL = "Time is racing by. Take advantage of this thrilling offer today."
+  SET @PH = "Stack your Bonus Cash Allowance toward one heart-pounding ride."
+
+ ENDIF
+
+    SET @brandNameToDisplay = "Alfa"
+
+   /*  Setting mobile image for third module */
+   SET @third_bg_mob = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_alfa_third_mob.jpg"
+   SET @third_mob_bg_height = "328px"
+
+    SET @brandNameLinks = "alfaromeousa"
+    SET @eshopBrand = "alfaromeousa"
+    
+    SET @brandsite = "https://www.alfaromeousa.com/"
+
+    SET @footerBG = "#1c1f2a"
+ SET @footerColor = "#ffffff"
+ SET @mobile_footerButtons_Color = "#ffffff"
+ SET @mobile_footerButtons_BG = "#981e32"
+
+
+
+ELSEIF @brand == "c" THEN
+
+    IF @offer_version == "116018" THEN
+
+  SET @SL = "Use your offer toward select new Chrysler Brand vehicles"
+  SET @PH = "Stack your Bonus Cash Allowance and start making lasting memories"
+
+ ELSE  
+
+  SET @SL = "Time is running out. Load up on your total Bonus Cash Allowance."
+  SET @PH = "Stack your Bonus Cash Allowance before time runs out."
+
+ ENDIF
+
+ SET @brandNameToDisplay = "Chrysler"
+   SET @brandNameLinks = "Chrysler"
+   
+
+    SET @footerBG = "#e1e1e1"
+ SET @footerColor = "#000000"
+ SET @mobile_footerButtons_Color = "#ffffff"
+ SET @mobile_footerButtons_BG = "#003c7a"
+
+    SET @brandsite = "https://www.chrysler.com/"
+
+
+
+ELSEIF @brand == "d" THEN
+
+    IF @offer_version == "116018" THEN
+
+  SET @SL = "Own the road with your offer toward a new Dodge Brand vehicle"
+  SET @PH = "Stack your Bonus Cash Allowance for one fast deal"
+
+ ELSE  
+
+  SET @SL = "Your offer is speeding by. Act Now."
+  SET @PH = "Stack your Bonus Cash Allowance before time runs out."
+
+ ENDIF
+
+
+    SET @brandNameLinks = "dodge"
+    SET @brandNameToDisplay = "Dodge"
+
+    SET @brandsite = "https://www.dodge.com/"
+
+    SET @footerBG = "#000000"
+ SET @footerColor = "#ffffff"
+ SET @mobile_footerButtons_Color = "#ffffff"
+ SET @mobile_footerButtons_BG = "#767676"
+
+
+
+
+
+ELSEIF @brand == "f" THEN
+
+    IF @offer_version == "116018" THEN
+
+  SET @SL = "Experience life's beauty and fun with your offer on a FIAT® Brand vehicle"
+  SET @PH = "Stack your Bonus Cash Allowance for one sporty ride"
+
+ ELSE  
+
+  SET @SL = "Conquer fun. Take advantage of this great offer today."
+  SET @PH = "Stack your Bonus Cash Allowance before time runs out."
+
+ ENDIF
+
+
+    SET @brandNameLinks = "fiatusa"
+    SET @eshopBrand = "fiatusa"
+
+    SET @brandNameToDisplay = "FIAT"
+
+    SET @brandsite = "https://www.fiatusa.com/"
+
+    SET @footerBG = "#000000"
+ SET @footerColor = "#ffffff"
+ SET @mobile_footerButtons_Color = "#ffffff"
+ SET @mobile_footerButtons_BG = "#e22227"
+
+
+    
+
+
+ELSEIF @brand == "j" THEN
+
+ IF @offer_version == "116018" THEN
+
+  SET @SL = "Use your offer toward select vehicles in the Best SUV Lineup, as awarded by Newsweek"
+  SET @PH = "Stack your Bonus Cash Allowance for one big adventure"
+
+ ELSE  
+
+  SET @SL = "Redeem your offer today for one epic adventure."
+  SET @PH = "Stack your Bonus Cash Allowance during Jeep Adventure Days."
+
+ ENDIF
+
+    SET @brandNameToDisplay = "Jeep"
+    SET @brandNameLinks = "jeep"
+
+    SET @brandsite = "https://www.jeep.com/"
+
+    SET @footerBG = "#d3d3d3"
+ SET @footerColor = "#000000"
+ SET @mobile_footerButtons_Color = "#ffffff"
+ SET @mobile_footerButtons_BG = "#7f8285"
+
+SET @offer_bg_mob = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_jeep_bg_mob.jpg"
+
+
+ELSEIF @brand == "r" THEN
+
+    IF @offer_version == "116018" THEN
+
+  SET @SL = "Feel the power and comfort of the Ram Brand with your offer"
+  SET @PH = "Stack your Bonus Cash Allowance for one big haul"
+
+ ELSE  
+
+  SET @SL = "Use your Bonus Cash Allowance toward your next endeavor."
+  SET @PH = "Take advantage of Ram Power Days before time runs out."
+
+ ENDIF
+
+    SET @brandNameLinks = "ramtrucks"
+    SET @eshopBrand = "ramtrucks"
+    SET @brandNameToDisplay = "Ram"
+
+    SET @brandsite = "https://www.ramtrucks.com/"
+
+    SET @footerBG = "#d6d6d6"
+ SET @footerColor = "#000000"
+ SET @mobile_footerButtons_Color = "#ffffff"
+ SET @mobile_footerButtons_BG = "#000000"
+ 
+/*  offer_bg_mob = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/9/imo_ram_bg_mob.jpg" */
+
+
+     IF(IndexOf(Lowercase(N_BRND), 'commercial') > 0) THEN
+
+        IF @offer_version == "116018" THEN
+
+            SET @SL = "Use your offer toward one seriously hardworking Ram truck or van"
+            SET @PH = "Load up on your total Bonus Cash Allowance"
+
+        ELSE  
+
+            SET @SL = "Take advantage of this great offer today. Act Now."
+            SET @PH = "Time is running out. Load up on your total Bonus Cash Allowance."
+
+        ENDIF
+
+
+        SET @brandNameLinks = "ramtrucks"
+        SET @brandNameToDisplay = "Ram"
+
+        SET @brandsite = "https://www.ramtrucks.com/"
+        SET @footerBrandLogo = "https://image.e.fcaemail.com/lib/fe2b11717064047a721d72/m/1/logo_Ram_Comm_blk_red.png"
+        SET @footerLogoSize = "200"
+
+
+     ENDIF
+
+
+
+
+
+ELSEIF @brand == "w" THEN
+    SET @font_style = "Times New Roman"
+     
+    
+
+    IF @offer_version == "116018" THEN
+
+  SET @SL = "Use your offer toward select Wagoneer or Grand Wagoneer models"
+  SET @PH = "Stack your Bonus Cash Allowance and take advantage of a grand combination"
+
+ ELSE  
+
+  SET @SL = "Reimagine your journey. Take advantage today."
+  SET @PH = "Time is running out. Stack your Bonus Cash Allowance for one grand combination."
+
+ ENDIF
+
+    SET @brandNameLinks = "wagoneer"
+    SET @brandNameToDisplay = "Wagoneer"
+    SET @brandsite = "https://www.jeep.com/wagoneer/"
+
+    SET @footerBG = "#eaeaea"
+ SET @footerColor = "#000000"
+ SET @mobile_footerButtons_Color = "#ffffff"
+ SET @mobile_footerButtons_BG = "#202a5c"
+
+
+
+ELSE
+    RaiseError("Unable to recognize the brand", true)
+
+ENDIF
+
+/* ESHOP & START BUYING PROCESS LINK */
+SET @zipcode = Trim(ZIPCODE)
+
+IF length(@zipcode) == 5 THEN 
+
+    SET @buyingProcess = concat('https://e-shop.',@eshopBrand,'.com/t1?refrel=',@eshopBrand,'&vehicle_type=new&zipcode=',@zipcode,'&')
+
+ELSE
+
+    SET @buyingProcess = concat('https://e-shop.',@eshopBrand,'.com/t1?refrel=',@eshopBrand,'&vehicle_type=new')
+
+ENDIF
+
+
+
+
+]%%

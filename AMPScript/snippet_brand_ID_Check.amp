@@ -1,0 +1,19 @@
+/*
+%%[
+
+// Ford BRAND_ID CHECK 
+Makes sure email only goes to Ford employees
+
+
+    IF LowerCase(Trim(@BRAND_ID)) == "Ford" THEN
+ 
+        set @ERROR_TYPE = "Ford BRAND_ID check"
+        set @ERROR_CATEGORY = "ERROR"
+        set @ERROR_DETAIL = Concat("User ",@USER_KEY, " has an BRAND_ID of Ford and should not receive this email.")
+        ContentBlockByName("Content Builder\Workplace\(3) Scripts\Function Scripts\INSERT_ERROR_LOG")
+        RaiseError(@ERROR_DETAIL, true)
+    ENDIF
+
+]%%
+
+*/

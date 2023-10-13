@@ -1,0 +1,396 @@
+<style type="text/css">
+
+    /* GLOBAL CSS RESET - DO NOT REMOVE OR CHANGE */
+    :root {
+      color-scheme: light;
+    }
+    #MessageViewBody a {
+        color: inherit;
+        text-decoration: none;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+    }
+
+    a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+    }
+        
+    sup {
+        line-height: 0;
+        font-size: 65%;
+    }
+
+    sub {
+        line-height: 0;
+        font-size: 55%;
+    }
+
+    .ReadMsgBody {
+        width: 100%;
+        background-color: #ebebeb;
+    }
+
+    .ExternalClass {
+        width: 100%;
+        background-color: #ebebeb;
+    }
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+        line-height: 100%;
+    }
+
+    table {
+        border-spacing: 0;
+    }
+
+    table td {
+        border-collapse: collapse;
+    }
+
+    .yshortcuts a {
+        border-bottom: none !important;
+    }
+
+    .appleLinkFix,
+    .appleLinkFix a {
+        color: inherit;
+        text-decoration: none;
+    }
+        
+
+    @media screen and (max-device-width: 600px),
+    screen and (max-width: 600px) {
+
+    /* GLOBAL CLASSES - DO NOT REMOVE */
+        #MessageViewBody a {
+            color: inherit;
+            text-decoration: none;
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+        }
+
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        .appleLinkFix,
+        .appleLinkFix a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        table.email_container {
+            width: 100% !important;
+        }
+
+        table.fluid {
+            width: auto !important;
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+            display: block !important;
+        }
+        
+        img.fluid {
+            width: 100% !important;
+            height: auto !important;
+            display: block !important;
+        }
+
+        *.show {
+            width: 100% !important;
+            height: auto !important;
+            display: block !important;
+            margin: 0 !important;
+            overflow: visible !important;
+            max-height: inherit !important;
+        }
+
+        td.force_col {
+            display: block !important;
+            width: 100% !important;
+        }
+        td.force_col_center {
+            text-align: center !important;
+            display: block !important;
+            width: 100% !important;
+            margin: 0 auto;
+            padding: 0 !important;
+        }
+
+        tr.hide,
+        td.hide,
+        img.hide,
+        span.hide,
+        br.hide,
+        nobr.hide {
+            display: none !important;
+            visibility: hidden !important;
+            font-size: 0 !important;
+            max-height: 0 !important;
+            line-height: 0 !important;
+            mso-hide: all !important;
+        }
+
+        td.footer_links {
+            padding-top: 0 !important;
+            padding-bottom: 15px !important;
+        }
+
+        a.mobile_links {
+            width: 85% !important;
+            height: auto !important;
+            padding: 12px 0 !important;
+            display: block;
+            text-align: center;
+            font-size: 15px !important;
+            line-height: 20px !important;
+            text-transform: uppercase !important;
+            text-decoration: none !important;
+            margin-bottom: 5px;
+            color: %%=v(@mobile_footerButtons_Color)=%% !important;
+            background-color: %%=v(@mobile_footerButtons_BG)=%% !important;
+        }
+
+        img.social {
+            width: 30px !important;
+            height: 30px !important;
+            padding-right: 2px !important;
+        }
+        
+        .padReset{
+            padding: 0px !important;
+        }
+        /* USE THIS CLASS TO BREAK COPY IN MOBILE */
+        .break {
+            display: block;
+        }
+
+        /* END GLOBAL SHARED */
+
+
+        /* HERO */
+        td.hero {
+            background-image:url('%%HERO_DSK%%') !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            width: 100% !important;
+            height: 134px !important;
+            margin: 0 auto !important;
+            overflow: visible !important;
+            max-height: inherit !important;
+            visibility: visible !important;
+            font-size: inherit !important;
+            line-height: inherit !important;
+        }
+
+        table.hero_table {
+            display: block;
+            margin: 0 !important;
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+            %%[IF length([VEH_NPL]) > 14 THEN]%%
+                width: 150px !important;
+            %%[ELSE]%%
+                width: 200px !important;
+            %%[ENDIF]%%
+        }
+
+
+        table.hero_table img {
+            width: 120px;
+        }
+        
+        td.hero_mob_height{
+            height: 133px !important;
+        }
+        
+        td.hero_amount_size{
+            font-size: 20px !important;
+            line-height: 20px !important;
+        }
+        
+        .hero_dollar_sign_size{
+            font-size: 14px !important;
+            vertical-align:super !important;
+        }
+
+        .hero_sup_mbl{
+            font-size: 10px !important;
+        }
+        td.hero_veh_mod_size{
+            font-size: 11px !important;
+        }
+        td.hero_bottom_pad{
+            padding-bottom: 10px !important;
+        }
+
+        /* OFFER CONTAINER */
+        table.offer_container {
+            background-image: none !important;
+            width: 100% !important;
+            height: auto !important;
+            margin: 0 auto !important;
+        } 
+        td.offer_pad_cta{
+            padding: 5px 5px 10px !important;
+        }
+        td.offer_hdr_c {
+            font-size: 19px !important;
+            width: 295px !important;
+            display: block;
+            margin: 0 auto;
+        }
+        td.offer_hdr_d {
+            font-size: 16px !important;
+            width: 295px !important;
+            display: block;
+            margin: 0 auto;
+        }
+        td.offer_subhead {
+            font-size: 12px !important;
+        } 
+        img.offer_with {
+             padding-bottom: 30px; 
+             max-width: 190px !important;
+             width: 190px !important;
+             margin:  0 auto !important;
+        }
+        br.hide {
+            display: none !important;
+        }
+        .break {
+            display: block !important;
+        }
+        
+        /* SECONDARY OFFER */
+        td.offer_box_top {
+            width: 240px !important;
+            padding: 15px 0px 10px !important;
+        }
+        td.offer_border {
+            border: none !important;
+            padding: 15px 0 25px !important;
+        }
+        td.offer_border img {
+            width: 165px !important;
+            padding: 0 !important;
+        }
+        td.offer_box_bottom {
+            border: none !important;
+            padding: 0 0 25px !important;
+        }
+        td.offer_mob_pad{
+            padding-bottom: 30px !important;
+        }
+        
+        td.mobile-bg-switch{
+            background-image:url('%%=v(@offer_bg_mob)=%%') !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            width: 100% !important;
+            height: auto !important;
+            margin: 0 auto !important;
+            overflow: visible !important;
+            max-height: inherit !important;
+            visibility: visible !important;
+            font-size: inherit !important;
+            line-height: inherit !important;
+        }
+        
+        table.mobile-border{
+            width: 220px !important;
+        }
+        
+        /* TILES OFFER */
+        td.tile_pad{
+            padding: 21px 30px !important;
+            width: auto !important;
+        }
+        td.top_30{
+            padding-top: 30px !important;
+        }
+        table.bottom_border{
+            padding: 0px 0px 7px !important;
+        }
+        td.tile_pad_title_chrysler{
+            padding: 40px 0px 15px !important;
+        }
+        td.tile_pad_title_ram{
+            padding: 25px 0px 15px !important;
+        }
+        td.tile_pad_cta_ram{
+            padding: 0px 0px 20px !important;
+        }
+        td.mob_tile_pad{
+            padding: 7px 35px 14px 50px !important;
+        }
+        td.mob_tile_pad2{
+            padding: 20px 28px!important;
+        }
+        td.jeep_tile_pad_mob{
+            padding: 20px 0px !important;
+        }
+        td.alfa_tile_mob{
+            padding: 0px 28px 15px!important;
+        }
+        td.center{
+            text-align: center !important;
+        }
+        td.mob_tile_hdl_4xe{
+            font-size: 28px !important;
+            line-height: 32px !important;
+            
+        }
+        td.mob_tile_pad_4xe{
+            padding: 7px 0px 14px 0px !important;
+            text-align: center !important;
+        }
+        table.center_tile_4xe{
+            width: 80% !important;
+        }
+        td.tile_4xe_cta_pad{
+            padding-bottom: 30px !important;
+        }
+        img.learncta{
+            display: block !important;
+            margin: 0 auto !important;
+            overflow: visible !important;
+            width: 166px !important;
+            max-height: inherit !important;
+            visibility: visible !important;
+            height: auto !important;
+            max-width: inherit !important;
+            padding-bottom: 20px !important;
+        
+  }
+        td.tile_wave_body_pad{
+            padding: 0 0 30px !important;
+        }
+        %%[IF @brand == 'w' THEN]%%
+        img.wagoneer-logo{
+            width: 220px !important;
+        }
+        %%[ENDIF]%%
+        
+    }
+    
+    </style>
