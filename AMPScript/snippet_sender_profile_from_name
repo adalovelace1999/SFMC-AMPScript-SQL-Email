@@ -1,0 +1,67 @@
+%%[
+var @FromName, @FromEmail, @ReplyName, @ReplyEmail, @cdo
+set @cdo = CDO__c
+
+IF @cdo == "TPC" or @cdo == "Polyclinic" or @cdo == "TEC" THEN
+    set @FromName = "Optum Care Washington"
+    set @FromEmail = "OptumCareWashington@email.optumcare.com"
+    set @ReplyName = "Optum Care Washington"
+    set @ReplyEmail = "OptumCareWashington@email.optumcare.com"
+
+ELSEIF @cdo == "NWP-CO" THEN
+    set @FromName = "New West Physicians"
+    set @FromEmail = "NWP@email.optumcare.com"
+    set @ReplyName = "New West Physicians"
+    set @ReplyEmail = "NWP@email.optumcare.com"
+
+ELSEIF @cdo == "AHN-IN" or @cdo == "AHN-OH" or @cdo == "AHN" THEN
+    set @FromName = "American Health Network"
+    set @FromEmail = "AHN@email.optumcare.com"
+    set @ReplyName = "American Health Network"
+    set @ReplyEmail = "AHN@email.optumcare.com"
+
+ELSEIF @cdo == "SMA" THEN
+    set @FromName = "Southwest Medical, part of Optum"
+    set @FromEmail = "SouthwestMedical@email.optumcare.com"
+    set @ReplyName = "Southwest Medical, part of OptumCare"
+    set @ReplyEmail = "SouthwestMedical@email.optumcare.com"
+
+ELSEIF @cdo == "APN CT" THEN
+    set @FromName = "Advantage Plus Network"
+    set @FromEmail = "AdvantagePlusNetwork@email.optumcare.com"
+    set @ReplyName = "Advantage Plus Network"
+    set @ReplyEmail = "AdvantagePlusNetwork@email.optumcare.com"
+
+ELSEIF @cdo == "APN" THEN
+    set @FromName = "ProHealth Physicians"
+    set @FromEmail = "ProHealthPhysicians@email.optumcare.com"
+    set @ReplyName = "ProHealth Physicians"
+    set @ReplyEmail = "ProHealthPhysicians@email.optumcare.com"
+
+ELSEIF @cdo == "OMG" THEN
+    set @FromName = "Oregon Medical Group"
+    set @FromEmail = "oregonmedicalgroup@email.optumcare.com"
+    set @ReplyName = "Oregon Medical Group"
+    set @ReplyEmail = "oregonmedicalgroup@email.optumcare.com"
+
+ELSEIF @cdo == "FMG" THEN
+    set @FromName = "Family Medical Group"
+    set @FromEmail = "familymedicalgroup@email.optumcare.com"
+    set @ReplyName = "Family Medical Group"
+    set @ReplyEmail = "familymedicalgroup@email.optumcare.com"
+
+ELSEIF @cdo == "Davies" THEN
+    set @FromName = "Davies Clinic"
+    set @FromEmail = "daviesclinic@email.optumcare.com"
+    set @ReplyName = "Davies Clinic"
+    set @ReplyEmail = "daviesclinic@email.optumcare.com"
+
+ELSE
+    set @FromName = "Optum"
+    set @FromEmail = "Optum@email.optumcare.com"
+    set @ReplyName = "Optum"
+    set @ReplyEmail = "Optum@email.optumcare.com"
+
+ENDIF
+]%%
+%%=v(@FromName)=%%
