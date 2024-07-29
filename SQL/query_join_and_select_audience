@@ -1,0 +1,51 @@
+SELECT DISTINCT(cs.Email) as Email,
+    cms.Id,
+    cms.CampaignId,
+    cms.DMG_MemberType__c  as ContactType,
+    cms.Description as CampaignDescription,
+    cms.LeadOrContactId,
+    cms.HasOptedOutOfEmail,
+    cms.FirstName,
+    cms.LastName,
+    cms.Comments__c,
+ /*   cs.Payor,   */
+    cs.Email_Opt_In__c,
+    /*to join from contact*/
+    cs.Market__c,
+    /*from campaign member*/
+    cms.CDO__c,
+    cms.Attribute1__c,
+    cms.Attribute2__c,
+    cms.Attribute3__c,
+    cms.Attribute4__c,
+    cms.Attribute5__c,
+    cms.Attribute6__c,
+    cms.Attribute7__c,
+    cms.Attribute8__c,
+    cms.Attribute9__c,
+    cms.Attribute10__c,
+    '142572-122023' as Attribute11__c,
+    '142593-122023' as Attribute12__c,
+    '142604-122023' as Attribute13__c,
+    '142615-122023' as Attribute14__c
+
+FROM
+    Ent.CampaignMember_Salesforce_3 cms
+
+LEFT JOIN Ent.Contact_Salesforce_8 cs ON cs.Id = cms.ContactId
+
+WHERE 
+    cs.DoNotCall != 'True' 
+    and cms.CDO__c = 'Polyclinic'
+    and cms.Email is not Null
+    and cms.CampaignId = '7015d000002hUmbAAE'
+
+
+
+
+
+   
+    /*iif (cms.Attribute1__c in ('Net New'),'142161-102023',*/
+   /*iif (cms.Attribute1__c in ('Existing'),'142168-102023', */
+   /*iif(cms.Attribute1__c in ('Net New - UHC'),'142551-122023',*/
+    /*cms.Attribute4__c))) as Attribute4__c*/
