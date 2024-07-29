@@ -1,0 +1,512 @@
+%%[
+
+Set @brand = "National"
+
+
+/* 
+Values for brands:
+"National" = National 
+"SMA" = Southwest Medical
+"IN" = American Health Network Indiana
+"OH" = American Health Network Ohio
+"CT" = Advantage Plus Network Connecticut
+*/
+
+// Article 1
+      Set @article1_img = "https://image.email.optumcare.com/lib/fe4311727564047d701470/m/1/b1a1f26f-0b55-4e4f-ba55-c81fe9a9ae98.png"
+      Set @article1_header = "What an eye exam can reveal about your health"
+      Set @article1_subheader = "Check out the other great articles we've put together for you this month"
+      Set @article1_cta_text = "Read more"
+      Set @article1_cta_link = "https://www.optum.com/en/health-articles/article/your-care-team/what-eye-exam-can-reveal-about-your-health/?utm_source=Email&utm_medium=EM&utm_term=HYPEmailOCCM7Art&utm_campaign=optum_HYP2024"
+      
+      
+// Article 2
+      Set @article2_img = "https://image.email.optumcare.com/lib/fe4311727564047d701470/m/1/b06a9ede-daa9-41fd-b559-44f3f2b8b038.png"
+      Set @article2_header = "Should you get tested for seasonal allergies?"
+      Set @article2_body = "Seasonal allergies are not just a spring thing. Here's what to know and when you should see a doctor."
+      Set @article2_cta_text = "Read more"
+      Set @article2_cta_link = "https://www.optum.com/health-articles/article/health-conditions/should-you-get-tested-seasonal-allergies/?utm_source=Email&utm_medium=EM&utm_term=HYPEmailOCCM7Art&utm_campaign=optum_HYP2024"
+      
+      
+// Article 3
+      Set @article3_img = "https://image.email.optumcare.com/lib/fe4311727564047d701470/m/1/0e3c202c-05ce-4328-a487-7bb8b583e6eb.png"
+      Set @article3_header = "Safe exercises for achy joints to relieve pain"
+      Set @article3_body = "Your type of movement matters. Here are the joint-friendly activities you need to feel better."
+      Set @article3_cta_text = "Read more"
+      Set @article3_cta_link = "https://www.optum.com/health-articles/article/health-conditions/safe-exercises-achy-joints-will-relieve-pain/?utm_source=Email&utm_medium=EM&utm_term=HYPEmailOCCM7Art&utm_campaign=optum_HYP2024"
+      
+      
+// Article 4
+      Set @article4_img = "https://image.email.optumcare.com/lib/fe4311727564047d701470/m/1/9d9b26f9-fa3b-4d59-8c9d-3f649a70dfb3.png"
+      Set @article4_header = "7 signs you have a good doctor"
+      Set @article4_body = "Your primary care doctor is your key to better health. Make sure they’re the right fit for you."
+      Set @article4_cta_text = "Read more"
+      Set @article4_cta_link = "https://www.optum.com/en/health-articles/article/healthy-living/7-signs-you-have-good-doctor/?utm_source=Email&utm_medium=EM&utm_term=HYPEmailOCCM7Art&utm_campaign=optum_HYP2024"
+      
+// Callout
+      Set @callout_header = TreatAsContent("Need to schedule an appointment?")
+      Set @callout_body = ""
+      Set @callout_cta_text = "Find care near you"
+      
+      
+
+
+
+IF @brand == "National" THEN
+set @documentum = "142353-112023"
+// logo
+      set @show_logo = "N"
+      set @logolink = ""
+      set @logoalt = ""
+      set @logo_src = ""
+      set @logo_width = ""
+//  Footer
+      set @show_logo_footer = "N"
+      set @sentby = TreatasContent("Optum<br />11000 Optum Circle, Eden Prairie, MN 55344")
+      set @privacypolicy = "https://www.optum.com/en/privacy-policy.html"
+Set @callout_cta_link = "https://www.optum.com/care.html"
+
+
+ELSEIF @brand == "SMA" THEN
+set @documentum = "142357-112023"
+// logo
+      set @show_logo = "Y"
+      set @logolink = "https://www.smalv.com/en/"
+      set @logoalt = "Southwest Medical"
+      set @logo_src = "https://image.email.optumcare.com/lib/fe4311727564047d701470/m/1/dbe09179-60a1-43ed-bc13-75663deccfa1.png"
+      set @logo_width = "170"
+//  Footer
+      set @show_logo_footer = "Y"
+      set @sentby = TreatAsContent("Southwest Medical, part of Optum<br />P.O. Box 15645, Las Vegas, NV 89114")
+      set @privacypolicy = "https://www.optum.com/en/privacy-policy.html"
+Set @logo_footer_padding = "padding: 15px 100px 15px 0;"
+Set @callout_cta_link = "https://www.optum.com/en/care/locations/nevada.html"
+
+
+ELSEIF @brand == "IN" THEN
+set @documentum = "142358-112023"
+
+
+// logo
+      set @show_logo = "Y"
+
+      set @logolink = "https://www.ahni.com/"
+      set @logoalt = "American Health Network, Part of Optum"
+      set @logo_src = "https://image.email.optumcare.com/lib/fe4311727564047d701470/m/1/32f5be6f-eae4-436a-af2f-76104893a66d.png"
+      set @logo_width = "150"
+//  Footer
+      set @show_logo_footer = "Y"
+      set @sentby = TreatAsContent("Optum | American Health Network<br />7440 Woodland Drive, Indianapolis, IN 46278")
+       set @privacypolicy = "https://www.ahni.com/privacy.html"
+             Set @callout_cta_link = "https://www.optum.com/en/care/locations/indiana.html"
+             
+             
+             ELSEIF @brand == "OH" THEN
+set @documentum = "142359-112023"
+// logo
+      set @show_logo = "Y"
+
+ set @logolink = "https://www.ahni.com/"
+ set @logoalt = "American Health Network, Part of Optum"
+ set @logo_src = "https://image.email.optumcare.com/lib/fe4311727564047d701470/m/1/32f5be6f-eae4-436a-af2f-76104893a66d.png"
+set @logo_width = "150"
+//  Footer
+      set @show_logo_footer = "N"
+      set @sentby = TreatAsContent("Optum | American Health Network<br />5900 Parkwood Place, Dublin, OH 43016")
+       set @privacypolicy = "https://www.ahni.com/privacy.html"
+Set @logo_footer_padding = "padding: 15px 100px 15px 0;"
+      Set @callout_cta_link = "https://www.optum.com/en/care/locations/ohio.html"
+      
+      
+ELSEIF @brand == "CT" THEN
+set @documentum = "142360-112023"
+set @PH = TreatAsContent("The Living Healthier eNewsletter is brought to you by Advantage Plus Network-CT, a partnership of Optum and Hartford HealthCare.")
+// logo
+set @show_logo = "Y"
+set @logolink = ""
+set @logoalt = "Advantage Plus Network"
+set @logo_src = "https://image.email.optumcare.com/lib/fe4311727564047d701470/m/1/38f2a321-5b9b-4e3c-add1-2773f66dc124.png"
+set @logo_width = "150"
+//  Footer
+      set @show_logo_footer = "N"
+      set @sentby = TreatAsContent("Advantage Plus Network - Connecticut<br />3 Farm Glen Boulevard, Farmington, CT 06032")
+       set @privacypolicy = "https://www.advantageplusnetwork.com/privacy-policy.html"
+Set @logo_footer_padding = "padding: 15px 100px 15px 0;"
+      Set @callout_cta_link = "https://www.optum.com/en/care/locations/connecticut.html"
+      
+
+      
+ENDIF
+
+
+]%%
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style>
+      a, a:visited {
+        text-decoration: none;
+      }
+      #MessageViewBody .samfix a, #MessageViewBody #footer a {
+        color: inherit !important;
+        font-family: inherit !important;
+        font-size: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+        text-decoration: none !important;
+      }
+      @media (max-width: 480px) {
+        th {
+          display: block !important;
+        }
+        .img-125 {
+          height: auto !important;
+          width: 125px !important;
+        }
+        .padding-bottom-14 {
+          padding-bottom: 14px !important;
+        }
+        .padding-left-0 {
+          padding-left: 0px !important;
+        }
+        .padding-left-20 {
+          padding-left: 20px !important;
+        }
+        .padding-right-20 {
+          padding-right: 20px !important;
+        }
+        .padding-right-0 {
+          padding-right: 0px !important;
+        }
+        .padding-top-0 {
+          padding-top: 0px !important;
+        }
+        .text-align-center {
+          text-align: center !important;
+        }
+        .width-280 {
+          width: 280px !important;
+        }
+        .width-375 {
+          width: 375px !important;
+        }
+        .pad_footer_logo {
+          padding: 0 0 20px 0 !important;
+        }
+        .pad_lr_0 {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+      }
+    </style>
+    <!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+    <!--[if gt mso 15]>
+<style>
+table {
+border-collapse: collapse;
+}
+tr {
+font-size: 0px;
+line-height: 0px;
+}
+</style>
+<![endif]-->
+  </head>
+  <body bgcolor="FFFFFF" style="background-color: #FFFFFF; margin: 0;">
+    <table align="center" bgcolor="FFFFFF" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #FFFFFF;" width="100%">
+      <tr>
+        <td align="center">
+          <table align="center" bgcolor="FFFFFF" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="background: #FFFFFF; width: 640px;" width="640">
+            <tr valign="middle">
+              <td style="padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px;" valign="middle">
+                <p style="color: #5A5A5A; font-family: Arial, sans-serif; font-size: 12px; line-height: 18px; margin: 0px; text-align: center;">%%=TreatAsContent(@PH)=%% 
+                  <a href="%%view_email_url%%" style="color: #196ECF; text-decoration: none; white-space: nowrap;" target="_blank">View&nbsp;in&nbsp;browser.</a>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td align="center">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="width: 640px;" width="640">
+                  <tr valign="bottom">
+                    <td align="left" class="padding-left-20" style="padding-bottom: 15px; padding-left: 40px; padding-top: 15px;" valign="bottom">
+                      <a href="https://www.optum.com/care" style="border: 0px; text-decoration: none;" target="_blank"><img align="left" alt="Optum" border="0" class="img-125" height="auto" src="https://image.yourhealth-wellnessteam.com/lib/fe9812707466047a72/m/21/cc7d79b4-34c0-4770-ad77-bc948eafec75.png" style="border: 0px; display: block; height: auto; text-decoration: none; width: 150px;" width="150" /></a>
+                    </td>
+                    %%[IF @show_logo == "Y" THEN]%%
+                    
+                    <td align="right" class="padding-right-20" style="padding-bottom: 15px; padding-right: 40px; padding-top: 15px;" valign="middle">
+                 %%[IF @brand == "CT" THEN]%%%%[ELSE]%%<a href="%%=redirectto(@logolink)=%%" target="_blank">%%[ENDIF]%%
+                      
+                      <img align="right" alt="%%=v(@logoalt)=%%" border="0" class="img-125" height="auto" src="%%=v(@logo_src)=%%" style="border: 0px; display: block; height: auto; text-decoration: none; width: %%=v(@logo_width)=%%px;" width="%%=v(@logo_width)=%%" />%%[IF @brand == "CT" THEN]%%%%[ELSE]%%</a>%%[ENDIF]%%
+                    %%[ENDIF]%%
+                      
+                      </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <table align="center" bgcolor="FBF9F4" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="background: #FBF9F4; width: 640px;" width="640">
+            <tr valign="middle">
+              <td style="padding-bottom: 16px; padding-left: 20px; padding-right: 20px; padding-top: 16px;" valign="middle">
+                <p style="color: #002677; font-family: Arial, sans-serif; font-size: 23px; line-height: 26px; margin: 0px; text-align: center;">Welcome to the Living Healthier newsletter
+                </p>
+              </td>
+            </tr>
+          </table>
+          <table align="center" bgcolor="D9F6FA" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="background: #D9F6FA; direction: rtl; width: 640px;" width="640">
+            <tr valign="middle">
+              <th align="center" class="width-375" style="direction: ltr; padding-bottom: 20px; padding-top: 20px; width: 300px;" valign="middle" width="300">
+                <a class="width-280" href="%%=redirectto(@article1_cta_link)=%%" target="_blank"> <img align="center" alt="" border="0" height="200" src="%%=v(@article1_img)=%%" style="border: 0px; display: block; height: 200px; text-decoration: none; width: 300px;" width="300" /></a>
+              </th>
+              <th align="left" class="width-375" style="direction: ltr; width: 340px;" valign="middle" width="340">
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="width: 340px;" width="340">
+                  <tr>
+                    <td class="padding-left-20 padding-right-20 padding-top-0" style="padding-bottom: 14px; padding-left: 30px; padding-top: 20px;">
+                      <p class="text-align-center" style="color: #002677; font-family: Arial, sans-serif; font-size: 30px; font-weight: bold; line-height: 40px; margin: 0px; text-align: left;">%%=v(@article1_header)=%% 
+                      </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td align="left" class="padding-left-0" style="padding-bottom: 20px; padding-left: 30px;">
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="width: 180px;" width="180">
+                        <tr>
+                          <td align="center">
+                            <div>
+                              <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="%%=redirectto(@article1_cta_link)=%%" style="height:46px;v-text-anchor:middle;width:180px;" arcsize="50%" stroke="f" fillcolor="#002677"><w:anchorlock/><center><![endif]-->
+                              <a class="width-280" href="%%=redirectto(@article1_cta_link)=%%" style="background-color: #002677; border-radius: 23px; color: #FFFFFF; display: inline-block; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 46px; text-align: center; text-decoration: none; white-space: nowrap; width: 180px; -webkit-text-size-adjust: none;" target="_blank">%%=v(@article1_cta_text)=%%</a>
+                              <!--[if mso]></center></v:roundrect><![endif]-->
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </th>
+            </tr>
+          </table>
+          <table align="center" bgcolor="FFFFFF" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="background: #FFFFFF; width: 640px;" width="640">
+            <tr valign="middle">
+              <td style="padding-bottom: 20px; padding-left: 20px; padding-right: 20px; padding-top: 20px;" valign="middle">
+                <p style="color: #002677; font-family: Arial, sans-serif; font-size: 22px; font-weight: bold; line-height: 32px; margin: 0px; text-align: center;">From being active to staying on top of test results, read more on how to keep your health goals in&nbsp;focus
+                </p>
+              </td>
+            </tr>
+            <!-- ARTICLE 2 - START -->
+            <tr>
+              <td align="center" style="padding-bottom: 30px;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="direction: ltr; width: 640px;" width="640">
+                  <tr valign="top">
+                    <th align="center" class="padding-bottom-14 padding-left-0 width-375" style="direction: ltr; padding-left: 30px; width: 230px;" valign="top" width="230">
+                      <a class="width-280" href="%%=redirectto(@article2_cta_link)=%%" target="_blank">  <img align="center" alt="" border="0" height="200" src="%%=v(@article2_img)=%%" style="border: 0px; display: block; height: 200px; text-decoration: none; width: 200px;" width="200" /></a>
+                    </th>
+                    <th align="left" class="width-375" style="direction: ltr; width: 410px;" valign="top" width="410">
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="width: 410px;" width="410">
+                        <tr>
+                          <td class="padding-right-20" style="padding-bottom: 14px; padding-left: 20px; padding-right: 100px;">
+                            <p class="text-align-center" style="color: #002677; font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 26px; margin-bottom: 14px; margin-top: 0px; text-align: left;">%%=v(@article2_header)=%%</p>
+                            <p class="text-align-center" style="color: #444444; font-family: Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 20px; margin: 0px; text-align: left;">%%=v(@article2_body)=%%</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="left" class="padding-left-0" style="padding-left: 20px;">
+                            <table align="left" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="width: 180px;" width="180">
+                              <tr>
+                                <td align="center">
+                                  <div>
+                                    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="%%=redirectto(@article2_cta_link)=%%" style="height:46px;v-text-anchor:middle;width:180px;" arcsize="50%" strokecolor="#002677" fillcolor="#FBF9F4"><w:anchorlock/><center style="color:#002677;font-family:sans-serif;font-size:16px;font-weight:bold;">Read&nbsp;more</center></v:roundrect><![endif]-->
+                                    <a href="%%=redirectto(@article2_cta_link)=%%" style="background-color: #FBF9F4; border: 1px solid #002677; border-radius: 23px; color: #002677; display: inline-block; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 46px; text-align: center; text-decoration: none; white-space: nowrap; width: 180px; -webkit-text-size-adjust: none; mso-hide: all;" target="_blank">%%=v(@article2_cta_text)=%%</a>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </th>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- ARTICLE 2 - END -->  
+            <!-- ARTICLE 3 - START -->
+            <tr>
+              <td align="center" style="padding-bottom: 30px;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="direction: ltr; width: 640px;" width="640">
+                  <tr valign="top">
+                    <th align="center" class="padding-bottom-14 padding-left-0 width-375" style="direction: ltr; padding-left: 30px; width: 230px;" valign="top" width="230">
+                      <a class="width-280" href="%%=redirectto(@article3_cta_link)=%%" target="_blank">  <img align="center" alt="" border="0" height="200" src="%%=v(@article3_img)=%%" style="border: 0px; display: block; height: 200px; text-decoration: none; width: 200px;" width="200" /></a>
+                    </th>
+                    <th align="left" class="width-375" style="direction: ltr; width: 410px;" valign="top" width="410">
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="width: 410px;" width="410">
+                        <tr>
+                          <td class="padding-right-20" style="padding-bottom: 14px; padding-left: 20px; padding-right: 100px;">
+                            <p class="text-align-center" style="color: #002677; font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 26px; margin-bottom: 14px; margin-top: 0px; text-align: left;">%%=v(@article3_header)=%%</p>
+                            <p class="text-align-center" style="color: #444444; font-family: Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 20px; margin: 0px; text-align: left;">%%=v(@article3_body)=%%</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="left" class="padding-left-0" style="padding-left: 20px;">
+                            <table align="left" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="width: 180px;" width="180">
+                              <tr>
+                                <td align="center">
+                                  <div>
+                                    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="%%=redirectto(@article3_cta_link)=%%" style="height:46px;v-text-anchor:middle;width:180px;" arcsize="50%" strokecolor="#002677" fillcolor="#FBF9F4"><w:anchorlock/><center style="color:#002677;font-family:sans-serif;font-size:16px;font-weight:bold;">Read&nbsp;more</center></v:roundrect><![endif]-->
+                                    <a href="%%=redirectto(@article3_cta_link)=%%" style="background-color: #FBF9F4; border: 1px solid #002677; border-radius: 23px; color: #002677; display: inline-block; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 46px; text-align: center; text-decoration: none; white-space: nowrap; width: 180px; -webkit-text-size-adjust: none; mso-hide: all;" target="_blank">%%=v(@article3_cta_text)=%%</a>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </th>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- ARTICLE 3 - END -->
+            <!-- ARTICLE 4 - START -->
+            <tr>
+              <td align="center" style="padding-bottom: 30px;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="direction: ltr; width: 640px;" width="640">
+                  <tr valign="top">
+                    <th align="center" class="padding-bottom-14 padding-left-0 width-375" style="direction: ltr; padding-left: 30px; width: 230px;" valign="top" width="230">
+                      <a class="width-280" href="%%=redirectto(@article4_cta_link)=%%" target="_blank"> <img align="center" alt="" border="0" height="200" src="%%=v(@article4_img)=%%" style="border: 0px; display: block; height: 200px; text-decoration: none; width: 200px;" width="200" /></a>
+                    </th>
+                    <th align="left" class="width-375" style="direction: ltr; width: 410px;" valign="top" width="410">
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="width: 410px;" width="410">
+                        <tr>
+                          <td class="padding-right-20" style="padding-bottom: 14px; padding-left: 20px; padding-right: 100px;">
+                            <p class="text-align-center" style="color: #002677; font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 26px; margin-bottom: 14px; margin-top: 0px; text-align: left;">%%=v(@article4_header)=%%</p>
+                            <p class="text-align-center" style="color: #444444; font-family: Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 20px; margin: 0px; text-align: left;">%%=v(@article4_body)=%%</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="left" class="padding-left-0" style="padding-left: 20px;">
+                            <table align="left" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="width: 180px;" width="180">
+                              <tr>
+                                <td align="center">
+                                  <div>
+                                    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="%%=redirectto(@article4_cta_link)=%%" style="height:46px;v-text-anchor:middle;width:180px;" arcsize="50%" strokecolor="#002677" fillcolor="#FBF9F4"><w:anchorlock/><center style="color:#002677;font-family:sans-serif;font-size:16px;font-weight:bold;">Read&nbsp;more</center></v:roundrect><![endif]-->
+                                    <a href="%%=redirectto(@article4_cta_link)=%%" style="background-color: #FBF9F4; border: 1px solid #002677; border-radius: 23px; color: #002677; display: inline-block; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 46px; text-align: center; text-decoration: none; white-space: nowrap; width: 180px; -webkit-text-size-adjust: none; mso-hide: all;" target="_blank">%%=v(@article4_cta_text)=%%</a>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </th>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- ARTICLE 4 - END -->  
+          </table>
+          <table align="center" bgcolor="D9F6FA" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="background: #D9F6FA; width: 640px;" width="640">
+            <tr valign="middle">
+              <td class="padding-left-20 padding-right-20" style="padding-bottom: 0px; padding-left: 129px; padding-right: 129px; padding-top: 30px;" valign="middle">
+                <p style="color: #002677; font-family: Arial, sans-serif; font-size: 19px; font-weight: bold; line-height: 26px; margin: 0px; text-align: center;">%%=v(@callout_header)=%%
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" class="padding-left-0" style="padding: 20px 0 30px;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="width: 180px;" width="180">
+                  <tr>
+                    <td align="center">
+                      <div>
+                        <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="%%=v(@callout_cta_link)=%%" style="height:46px;v-text-anchor:middle;width:180px;" arcsize="50%" stroke="f" fillcolor="#002677"><w:anchorlock/><center><![endif]-->
+                        <a class="width-280" href="%%=redirectto(@callout_cta_link)=%%" style="background-color: #002677; border-radius: 23px; color: #FFFFFF; display: inline-block; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 46px; text-align: center; text-decoration: none; white-space: nowrap; width: 180px; -webkit-text-size-adjust: none;" target="_blank">%%=redirectto(@callout_cta_text)=%%</a>
+                        <!--[if mso]></center></v:roundrect><![endif]-->
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <table align="center" bgcolor="FFFFFF" border="0" cellpadding="0" cellspacing="0" class="width-375" id="footer" role="presentation" style="background: #FFFFFF; width: 640px;" width="640">
+            <tr>
+              <td style="padding-bottom: 30px; padding-left: 20px; padding-right: 20px; padding-top: 20px;">
+                %%[IF @brand == "CT" THEN]%%
+                <p style="color: #636363; font-family: Arial, sans-serif; font-size: 11px; line-height: 18px; margin-bottom: 10px; margin-top: 0px; text-align: left;">The Living Healthier eNewsletter is brought to you by Advantage Plus Network-CT, a partnership of Optum and Hartford HealthCare.
+                </p>
+                %%[ENDIF]%%
+                <p style="color: #636363; font-family: Arial, sans-serif; font-size: 11px; line-height: 18px; margin-bottom: 10px; margin-top: 0px; text-align: left;">The company does not discriminate on the basis of race, color, national origin, sex, age, or disability in health programs and activities.
+                </p>
+                <p style="color: #636363; font-family: Arial, sans-serif; font-size: 11px; line-height: 18px; margin-bottom: 10px; margin-top: 0px; text-align: left;">We provide free services to help you communicate with us, such as letters in other languages or large print. Or, you can ask for an interpreter. To ask for help, please call the toll-free phone number listed on your ID card.
+                </p>
+                <p style="color: #636363; font-family: Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px; text-align: left;">ATENCIÓN: Si habla español (Spanish), hay servicios de asistencia de idiomas, sin cargo, a su disposición. Llame al número de teléfono gratuito que aparece en su tarjeta de identificación &#35531;&#27880;&#24847;&#65306;&#22914;&#26524;&#24744;&#35498;&#20013;&#25991; (Chinese)&#65292;&#25105;&#20497;&#20813;&#36027;&#28858;&#24744;&#25552;&#20379;&#35486;&#35328;&#21332;&#21161;&#26381;&#21209;&#12290;&#35531;&#25765;&#25171;&#26371;&#21729;&#21345;&#25152;&#21015;&#30340;&#20813;&#20184;&#36027;&#26371;&#21729;&#38651;&#35441;&#34399;&#30908;&#12290; 
+                  <a href="https://www.optum.com/language-assistance-nondiscrimination.html" style="color: #196ECF; text-decoration: none;" target="_blank">optum.com/language-assistance-nondiscrimination.html</a>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" style="padding-bottom: 50px;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation" style="direction: ltr; width: 640px;" width="640">
+                  <tr valign="top">
+                    <th align="center" class="width-375" style="direction: ltr; padding-bottom: 20px; width: 260px;" valign="top" width="260">
+                      <img align="center" alt="Optum" border="0" height="auto" src="https://image.yourhealth-wellnessteam.com/lib/fe9812707466047a72/m/21/cc7d79b4-34c0-4770-ad77-bc948eafec75.png" style="border: 0px; display: block; height: auto; text-decoration: none; width: 115px;" width="115" />
+                    </th>
+                    <th align="center" class="width-375" style="direction: ltr; width: 380px;" valign="top" width="380">
+                      <table align="center" border="0" cellpadding="0" cellspacing="0" class="width-375" role="presentation">
+                        %%[IF @brand == "SMA" THEN]%%
+                        <tr>
+                          <td align="center" style="padding: 15px 200px 15px 0;" class="padding-right-0" valign="middle">
+                            <a href="%%=RedirectTo(@logolink)=%%" style="border: 0px; text-decoration: none;" target="_blank"><img align="center" alt="%%=v(@logoalt)=%%" border="0" class="" height="auto" src="%%=v(@logo_src)=%%" style="border: 0px; display: block; height: auto; text-decoration: none; width: %%=v(@logo_width)=%%px;" width="200" /></a>
+                          </td>
+                        </tr>
+  
+                        %%[ELSEIF @brand == "CT" THEN]%%
+                        <tr>
+                          <td align="center" class="pad_lr_0" style="padding: 15px 225px 15px 0;" valign="middle"><img align="center" alt="%%=v(@logoalt)=%%" border="0" class="pad_lr_0" height="auto" src="%%=v(@logo_src)=%%" style="border: 0px; display: block; height: auto; text-decoration: none; width: %%=v(@logo_width)=%%px; " width="%%=v(@logo_width)=%%" />
+                          </td>
+                        </tr>
+                        %%[ENDIF]%%
+                        <tr>
+                          <td class="padding-left-20" style="padding-right: 20px;">
+                            <p class="text-align-center" style="color: #636363; font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; line-height: 18px; margin-bottom: 12px; margin-top: 0px; text-align: left;">
+                              This email was sent by:
+                              <br />
+                              %%=TreatAsContent(@sentby)=%%<br />
+                              &copy; %%xtyear%% Optum, Inc. All rights reserved.
+                              <br />
+                              WF12125401 
+                              <a style="color: #636363; text-decoration: none;">%%=v(@documentum)=%%</a> OHC
+                            </p>
+                            <p class="text-align-center" style="color: #196ECF; font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; line-height: 18px; margin-bottom: 12px; margin-top: 0px; text-align: left;">
+                              <a href="%%=RedirectTo(CloudPagesURL(1014))=%%" style="color: #196ECF; text-decoration: none; white-space: nowrap;" target="_blank">Preference&nbsp;Center</a>&nbsp; |&nbsp; 
+                              <a href="%%=RedirectTo(CloudPagesURL(1014))=%%" style="color: #196ECF; text-decoration: none;" target="_blank">Unsubscribe</a>&nbsp; |&nbsp; 
+                              <a href="%%=RedirectTo(@privacypolicy)=%%" style="color: #196ECF; text-decoration: none; white-space: nowrap;" target="_blank">Privacy&nbsp;Policy</a>
+                            </p>
+                            <p class="text-align-center" style="color: #636363; font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; line-height: 18px; margin: 0px; text-align: left;">Please do not reply to this email address, this mailbox is used for outbound email only.
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </th>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <custom name="opencounter" type="tracking" />
+  </body>
+</html>
