@@ -1,0 +1,335 @@
+<!--%%[
+var @UNIQUE_IDENTIFIER, @LOGOURL, @COLOR1, @COLOR2, @ADDRESS1, @ADDRESS2, @ADDRESS3, @HOURS, @PHONE_BODY, @PHONE_DISCLAIMER, @HEADLINE, @IMAGE_ENROLLNOW, @IMAGE_EGUIDE, @LINK_PRIMARY, @UTM_TERM_EM4
+
+Set @gatekeeper = CDO__c
+Set @keymaster = Lookup("NTM-BRANDING_PATIENT", "UNIQUE_IDENTIFIER", "UNIQUE_IDENTIFIER", @gatekeeper)
+
+Set @rows = LookupRows("NTM-BRANDING_PATIENT", "UNIQUE_IDENTIFIER", @gatekeeper)
+if RowCount(@rows) == 1 then
+ Set @row = Row(@rows, 1)
+ Set @LOGOURL = Field(@row, "LOGO-URL")
+ Set @COLOR1 = Field(@row, "COLOR-1")
+ Set @COLOR2 = Field(@row, "COLOR-2")
+ Set @ADDRESS1 = Field(@row, "ADDRESS-1")
+ Set @ADDRESS2 = Field(@row, "ADDRESS-2")
+ Set @ADDRESS3 = Field(@row, "ADDRESS-3")
+ Set @HOURS = Field(@row, "HOURS")
+ Set @PHONE_BODY = Field(@row, "PHONE_BODY")
+ Set @PHONE_DISCLAIMER = Field(@row, "PHONE_DISCLAIMER")
+ Set @HEADLINE = Field(@row, "HEADLINE")
+ Set @IMAGE_ENROLLNOW = Field(@row, "IMAGE_ENROLL-NOW")
+ Set @IMAGE_EGUIDE = Field(@row, "IMAGE_E-GUIDE")
+ Set @LINK_PRIMARY = Field(@row, "LINK_PRIMARY")
+ Set @UTM_TERM_EM4 = Field(@row, "UTM_TERM_EM4")
+endif
+]%%-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+ <head>
+  <meta charset="utf-8">
+  <style>
+   @media (max-width: 480px) {
+    .center {
+     text-align: center !important;
+    }
+    .img130 {
+     height: auto !important;
+     width: 130px !important;
+    }
+    .img280 {
+     height: auto !important;
+     width: 280px !important;
+    }
+    .img320 {
+     height: auto !important;
+     width: 320px !important;
+    }
+    .pb0 {
+     padding-bottom: 0px !important;
+    }
+    .pb20 {
+     padding-bottom: 20px !important;
+    }
+    .pl0 {
+     padding-left: 0px !important;
+    }
+    .pl20 {
+     padding-left: 20px !important;
+    }
+    .pr0 {
+     padding-right: 0px !important;
+    }
+    .pr20 {
+     padding-right: 20px !important;
+    }
+    .pt0 {
+     padding-top: 0px !important;
+    }
+    .pt20 {
+     padding-top: 20px !important;
+    }
+    .width280 {
+     width: 280px !important;
+    }
+    .width320 {
+     width: 320px !important;
+    }
+   }
+  </style>
+  <!--[if gte mso 9]>
+  <style>
+  sup {
+   mso-text-raise: 15% !important;
+   vertical-align: top !important;
+  }
+  </style> 
+  <![endif]-->
+  <!--[if gte mso 9]><xml>
+  <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+  </o:OfficeDocumentSettings>
+  </xml><![endif]-->
+ </head>
+ <body bgcolor="FFFFFF" style="background-color: #FFFFFF; margin: 0;">
+  <table align="center" bgcolor="FFFFFF" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #FFFFFF;" width="100%">
+   <tr>
+    <td>
+     <table align="center" bgcolor="F5F5F5" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background: #F5F5F5;" width="100%">
+      <tr>
+       <td align="center">
+        <table align="center" bgcolor="F5F5F5" border="0" cellpadding="0" cellspacing="0" class="width320" role="presentation" style="background: #F5F5F5; width: 640px;" width="640">
+         <tr>
+          <td style="padding-bottom: 15px; padding-left: 20px; padding-right: 20px; padding-top: 15px;">
+           <p style="color: #636363; font-family: Arial, sans-serif; font-size: 12px; line-height: 18px; margin: 0px; text-align: center;">Your Medicare enrollment period ends soon. <a href="%%view_email_url%%" style="color: #316BBE; text-decoration: none; white-space: nowrap;" target="_blank">View&nbsp;in&nbsp;browser</a></p>
+          </td>
+         </tr>
+        </table>
+       </td>
+      </tr>
+     </table>
+     <table align="center" bgcolor="FFFFFF" border="0" cellpadding="0" cellspacing="0" class="width320" role="presentation" style="background: #FFFFFF; width: 640px;" width="640">
+      <tr>
+       <td align="left" class="pl0" style="padding-bottom: 25px; padding-left: 20px; padding-top: 20px;">
+        %%[ IF not Empty(@LINK_PRIMARY) then ]%%
+        <a href="%%=RedirectTo(@LINK_PRIMARY)=%%" style="border: 0px; text-decoration: none;" target="_blank"><img align="left" alt="%%=v(@ADDRESS1)=%%" border="0" class="img130" src="%%=v(@LOGOURL)=%%" style="border: 0px; display: block; text-decoration: none; width: 180px;" width="180" /></a>
+        %%[ ELSE ]%%
+        <a href="https://www.optumcare.com/medicare-advantage.html" style="border: 0px; text-decoration: none;" target="_blank"><img align="left" alt="Optum" border="0" class="img130" src="https://image.email.optumcare.com/lib/fe4311727564047d701470/m/1/8b47ff11-d0d5-433f-a167-cea32586e590.png" style="border: 0px; display: block; text-decoration: none; width: 180px;" width="180" /></a>
+        %%[ ENDIF ]%%
+       </td>
+      </tr>
+      <tr>
+       <td align="center">
+        %%[ IF not Empty(@LINK_PRIMARY) then ]%%
+        <a href="%%=RedirectTo(@LINK_PRIMARY)=%%" style="border: 0px; text-decoration: none;" target="_blank"><img align="center" alt="Doctor and patient exploring care options" border="0" class="img320" height="250" src="https://image.email.optumcare.com/lib/fe4311727564047d701470/m/1/b1acefee-aca8-4e9a-9b64-97ba2abbd36f.jpg" style="border: 0px; display: block; height: 250px; text-decoration: none; width: 640px;" width="640" /></a>
+        %%[ ELSE ]%%
+        <a href="https://www.optumcare.com/medicare-advantage.html" style="border: 0px; text-decoration: none;" target="_blank"><img align="center" alt="Doctor and patient exploring care options" border="0" class="img320" height="250" src="https://image.email.optumcare.com/lib/fe4311727564047d701470/m/1/b1acefee-aca8-4e9a-9b64-97ba2abbd36f.jpg" style="border: 0px; display: block; height: 250px; text-decoration: none; width: 640px;" width="640" /></a>
+        %%[ ENDIF ]%%
+       </td>
+      </tr>
+     </table>
+     <table align="center" bgcolor="F5F5F5" border="0" cellpadding="0" cellspacing="0" class="width320" role="presentation" style="background: #F5F5F5; width: 640px;" width="640">
+      <tr>
+       <td style="padding-bottom: 15px; padding-left: 20px; padding-right: 20px; padding-top: 15px;">
+        %%[ IF not Empty(@HEADLINE) then ]%%
+        <p style="color: #%%=v(@COLOR1)=%%; font-family: Arial, sans-serif; font-size: 28px; font-weight: bold; line-height: 34px; margin: 0px; text-align: center;">%%=v(@HEADLINE)=%%</p>
+        %%[ ELSE ]%%
+        <p style="color: #E87722; font-family: Arial, sans-serif; font-size: 28px; font-weight: bold; line-height: 34px; margin: 0px; text-align: center;">Optum doctors + Medicare Advantage</p>
+        %%[ ENDIF ]%%
+        %%[ IF not Empty(@PHONE_BODY) then ]%%
+        <p style="color: #444444; font-family: Arial, sans-serif; font-size: 22px; line-height: 28px; margin: 0px; text-align: center;">Call now: <a href="tel:%%=v(@PHONE_BODY)=%%" style="color: #%%=v(@COLOR2)=%%; font-weight: bold; text-decoration: none; white-space: nowrap;">%%=v(@PHONE_BODY)=%%</a>, TTY&nbsp;711</p>
+        %%[ ELSE ]%%
+        <p style="color: #444444; font-family: Arial, sans-serif; font-size: 22px; line-height: 28px; margin: 0px; text-align: center;">Call now: <a href="tel:1-866-455-1387" style="color: #316BBE; font-weight: bold; text-decoration: none; white-space: nowrap;">1-866-455-1387</a>, TTY&nbsp;711</p>
+        %%[ ENDIF ]%%
+        %%[ IF not Empty(@HOURS) then ]%%
+        <p style="color: #444444; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; margin: 0px; text-align: center;">%%=v(@HOURS)=%%</p>
+        %%[ ELSE ]%%
+        <p style="color: #444444; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; margin: 0px; text-align: center;">Monday - Friday, 8 a.m to 5 p.m.</p>
+        %%[ ENDIF ]%%
+       </td>
+      </tr>
+     </table>
+     <table align="center" bgcolor="FFFFFF" border="0" cellpadding="0" cellspacing="0" class="width320" role="presentation" style="background: #FFFFFF; width: 640px;" width="640">
+      <tr>
+       <td style="padding-top: 35px;">
+        <!--[if mso]><table><tr valign="top"><td valign="top" width="440"><![endif]-->
+        <table align="left" border="0" cellpadding="0" cellspacing="0" class="width320" role="presentation" style="width: 440px;" width="440">
+         <tr>
+          <td class="pr20" style="padding-bottom: 30px; padding-left: 20px;">
+           <p style="color: #444444; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 24px; margin-bottom: 5px; margin-top: 0px; text-align: left;">Put your health first: Choose a Medicare Advantage plan before your enrollment period ends</p>
+           <p style="color: #444444; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; margin-bottom: 15px; margin-top: 0px; text-align: left;">Your chance to choose a Medicare plan ends soon. Be sure to combine one of our primary care doctors and a plan that&rsquo;s right for you. Together, they offer you an all-in-one plan with personalized, quality care at a cost you can afford.</p>
+           <p style="color: #444444; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 24px; margin-bottom: 5px; margin-top: 0px; text-align: left;">Get your free health care and insurance review.</p>
+           
+           <p style="color: #444444; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; margin: 0px; text-align: left;">Get answers to your Medicare questions. And help take your health care to the next level.</p>
+          </td>
+         </tr>
+         <tr>
+          <td style="padding-bottom: 35px; padding-left: 20px; padding-right: 20px;">
+           %%[ IF not Empty(@PHONE_BODY) then ]%%
+           <p style="color: #444444; font-family: Arial, sans-serif; font-size: 22px; line-height: 28px; margin: 0px; text-align: center;">Call today: <a href="tel:%%=v(@PHONE_BODY)=%%" style="color: #%%=v(@COLOR2)=%%; font-weight: bold; text-decoration: none; white-space: nowrap;">%%=v(@PHONE_BODY)=%%</a>, TTY&nbsp;711</p>
+           %%[ ELSE ]%%
+           <p style="color: #444444; font-family: Arial, sans-serif; font-size: 22px; line-height: 28px; margin: 0px; text-align: center;">Call today: <a href="tel:1-866-455-1387" style="color: #316BBE; font-weight: bold; text-decoration: none; white-space: nowrap;">1-866-455-1387</a>, TTY&nbsp;711</p>
+           %%[ ENDIF ]%%
+           %%[ IF not Empty(@HOURS) then ]%%
+           <p style="color: #444444; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; margin: 0px; text-align: center;">%%=v(@HOURS)=%%</p>
+           %%[ ELSE ]%%
+           <p style="color: #444444; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; margin: 0px; text-align: center;">Monday - Friday, 8 a.m to 5 p.m.</p>
+           %%[ ENDIF ]%%
+          </td>
+         </tr>
+        </table>
+        <!--[if mso]></td><td valign="top" width="200"><![endif]-->
+        <table align="left" border="0" cellpadding="0" cellspacing="0" class="width320" role="presentation" style="width: 200px;" width="200">
+
+             %%[ 
+                var @cdoLink
+                if @gatekeeper == "MVMG-COS" then 
+                    set @cdoLink = "https://mvmg.com/medicare?utm_campaign=OC_9.6_2022&utm_medium=EM&utm_source=EMB2C&utm_term="
+                ELSEIF @gatekeeper == "NWP-CO" then 
+                    set @cdoLink = "https://www.nwphysicians.com/medicare/?utm_campaign=OC_9.6_2022&utm_medium=EM&utm_source=EMB2C&utm_term="
+                else
+                    set @cdoLink = "https://www.optumcare.com/medicare-advantage/resources/living-healthier-guide.html?utm_campaign=OC_9.6_2022&utm_medium=EM&utm_source=EMB2C&utm_term="
+                endif    
+            ]%%
+         %%[ IF not Empty(@UTM_TERM_EM4) then ]%%
+         <tr>
+          <td align="center" style="padding-bottom: 10px;">
+           <a href="%%=RedirectTo(concat(@cdoLink, @UTM_TERM_EM4))=%%" style="border: 0px; text-decoration: none;" target="_blank"><img align="center" alt="Free downloadable guide" border="0" src="%%=v(@IMAGE_EGUIDE)=%%" style="border: 0px; display: block; text-decoration: none; width: 140px;" width="140" /></a>
+          </td>
+         </tr>
+         <tr>
+          <td style="padding-bottom: 15px;">
+           <p style="color: #444444; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; line-height: 20px; margin: 0px; text-align: center;"><a href="%%=RedirectTo(concat(@cdoLink, @UTM_TERM_EM4))=%%" style="color: #444444; text-decoration: none;" target="_blank">Learn more about<br />Medicare Advantage</a></p>
+          </td>
+         </tr>
+         <tr>
+          <td align="center" style="padding-bottom: 30px;">
+           <div>
+            <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="%%=RedirectTo(concat(@cdoLink, @UTM_TERM_EM4))=%%" style="height:40px;v-text-anchor:middle;width:140px;" arcsize="10%" stroke="f" fillcolor="#%%=v(@COLOR1)=%%"><w:anchorlock/><center><![endif]-->
+            <a href="%%=RedirectTo(concat(@cdoLink, @UTM_TERM_EM4))=%%" style="background-color: #%%=v(@COLOR1)=%%; border-radius: 4px; color: #FFFFFF; display: inline-block; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 40px; text-align: center; text-decoration: none; white-space: nowrap; width: 140px; -webkit-text-size-adjust: none;" target="_blank">Download</a>
+            <!--[if mso]></center></v:roundrect><![endif]-->
+           </div>
+          </td>
+         </tr>
+         %%[ ELSE ]%%
+         <tr>
+          <td align="center" style="padding-bottom: 10px;">
+           <a href="https://www.optumcare.com/medicare-advantage/resources/living-healthier-guide.html" style="border: 0px; text-decoration: none;" target="_blank"><img align="center" alt="Free downloadable guide" border="0" src="https://image.email.optumcare.com/lib/fe4311727564047d701470/m/1/b212caca-f160-47c9-a0c7-370f561a6848.jpg" style="border: 0px; display: block; text-decoration: none; width: 140px;" width="140" /></a>
+          </td>
+         </tr>
+         <tr>
+          <td style="padding-bottom: 15px;">
+           <p style="color: #444444; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; line-height: 20px; margin: 0px; text-align: center;"><a href="http://" style="color: #444444; text-decoration: none;" target="_blank">Learn more about<br />Medicare Advantage</a></p>
+          </td>
+         </tr>
+         <tr>
+          <td align="center" style="padding-bottom: 30px;">
+           <div>
+            <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.optumcare.com/medicare-advantage/resources/living-healthier-guide.html" style="height:40px;v-text-anchor:middle;width:140px;" arcsize="10%" stroke="f" fillcolor="#E87722"><w:anchorlock/><center><![endif]-->
+            <a href="http://" style="background-color: #E87722; border-radius: 4px; color: #FFFFFF; display: inline-block; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 40px; text-align: center; text-decoration: none; white-space: nowrap; width: 140px; -webkit-text-size-adjust: none;" target="_blank">Download</a>
+            <!--[if mso]></center></v:roundrect><![endif]-->
+           </div>
+          </td>
+         </tr>
+         %%[ ENDIF ]%%
+
+           %%[ 
+                
+                if @gatekeeper == "MVMG-COS" then 
+                    set @cdoLink = "https://mvmg.com/medicare?utm_campaign=OC_9.6_2022&utm_medium=EM&utm_source=EMB2C&utm_term="
+                ELSEIF @gatekeeper == "NWP-CO" then 
+                    set @cdoLink = "https://www.nwphysicians.com/medicare/?utm_campaign=OC_9.6_2022&utm_medium=EM&utm_source=EMB2C&utm_term="
+                else
+                    set @cdoLink = "https://www.optumcare.com/medicare-advantage/resources/checklist.html?utm_campaign=OC_9.6_2022&utm_medium=EM&utm_source=EMB2C&utm_term="
+                endif    
+            ]%%
+
+         %%[ IF not Empty(@UTM_TERM_EM4) then ]%%
+            <tr>
+            <td align="center" style="padding-bottom: 10px;">
+            <a href="%%=RedirectTo(concat(@cdoLink, @UTM_TERM_EM4))=%%" style="border: 0px; text-decoration: none;" target="_blank"><img align="center" alt="Medicare Advantage enrollment checklist" border="0" src="%%=v(@IMAGE_ENROLLNOW)=%%" style="border: 0px; display: block; text-decoration: none; width: 140px;" width="140" /></a>
+            </td>
+            </tr>
+            <tr>
+            <td style="padding-bottom: 15px;">
+            <p style="color: #444444; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; line-height: 20px; margin: 0px; text-align: center;"><a href="%%=RedirectTo(concat(@cdoLink, @UTM_TERM_EM4))=%%" style="color: #444444; text-decoration: none;" target="_blank">Get your<br />Medicare Advantage<br />enrollment checklist</a></p>
+            </td>
+            </tr>
+            <tr>
+            <td align="center" style="padding-bottom: 35px;">
+            <div>
+                <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="%%=RedirectTo(concat(@cdoLink, @UTM_TERM_EM4))=%%" style="height:40px;v-text-anchor:middle;width:140px;" arcsize="10%" stroke="f" fillcolor="#%%=v(@COLOR1)=%%"><w:anchorlock/><center><![endif]-->
+                <a href="%%=RedirectTo(concat(@cdoLink, @UTM_TERM_EM4))=%%" style="background-color: #%%=v(@COLOR1)=%%; border-radius: 4px; color: #FFFFFF; display: inline-block; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 40px; text-align: center; text-decoration: none; white-space: nowrap; width: 140px; -webkit-text-size-adjust: none;" target="_blank">Download</a>
+                <!--[if mso]></center></v:roundrect><![endif]-->
+            </div>
+            </td>
+            </tr>
+         %%[ ELSE ]%%
+         <tr>
+          <td align="center" style="padding-bottom: 10px;">
+           <a href="https://www.optumcare.com/medicare-advantage/resources/checklist.html" style="border: 0px; text-decoration: none;" target="_blank"><img align="center" alt="Medicare Advantage enrollment checklist" border="0" src="https://image.email.optumcare.com/lib/fe4311727564047d701470/m/1/e56be432-04df-4e78-89ab-d74abc0b3383.jpg" style="border: 0px; display: block; text-decoration: none; width: 140px;" width="140" /></a>
+          </td>
+         </tr>
+         <tr>
+          <td style="padding-bottom: 15px;">
+           <p style="color: #444444; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; line-height: 20px; margin: 0px; text-align: center;"><a href="https://www.optumcare.com/medicare-advantage/resources/checklist.html" style="color: #444444; text-decoration: none;" target="_blank">Get your<br />Medicare Advantage<br />enrollment checklist</a></p>
+          </td>
+         </tr>
+         <tr>
+          <td align="center" style="padding-bottom: 35px;">
+           <div>
+            <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.optumcare.com/medicare-advantage/resources/checklist.html" style="height:40px;v-text-anchor:middle;width:140px;" arcsize="10%" stroke="f" fillcolor="#E87722"><w:anchorlock/><center><![endif]-->
+            <a href="http://" style="background-color: #E87722; border-radius: 4px; color: #FFFFFF; display: inline-block; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 40px; text-align: center; text-decoration: none; white-space: nowrap; width: 140px; -webkit-text-size-adjust: none;" target="_blank">Download</a>
+            <!--[if mso]></center></v:roundrect><![endif]-->
+           </div>
+          </td>
+         </tr>
+         %%[ ENDIF ]%%
+        </table>
+        <!--[if mso]></td></tr></table><![endif]-->
+       </td>
+      </tr>
+     </table>
+     <table align="center" bgcolor="F5F5F5" border="0" cellpadding="0" cellspacing="0" class="width320" role="presentation" style="background: #F5F5F5; width: 640px;" width="640">
+      <tr>
+       <td style="padding-bottom: 25px; padding-left: 20px; padding-right: 20px; padding-top: 25px;">
+        <p style="color: #636363; font-family: Arial, sans-serif; font-size: 11px; line-height: 18px; margin-bottom: 10px; margin-top: 0px; text-align: left;"> A representative from Optum can connect you with a licensed insurance agent in your area to review your health insurance plan options.
+     </p>
+        <p style="color: #636363; font-family: Arial, sans-serif; font-size: 11px; line-height: 18px; margin-bottom: 10px; margin-top: 0px; text-align: left;">The company does not discriminate on the basis of race, color, national origin, sex, age, or disability in health programs and activities. We provide free services to help you communicate with us such as letters in other languages or large print. Or, you can ask for an interpreter. To ask for help, please call %%[ IF not Empty(@PHONE_DISCLAIMER) then ]%% %%=v(@PHONE_DISCLAIMER)=%% %%[else]%% the toll-free phone number listed on your ID card. %%[endif]%%</p>
+    
+        <p style="color: #636363; font-family: Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px; text-align: left;">ATENCIÓN: Si habla español (Spanish), hay servicios de asistencia de idiomas, sin cargo, a su disposición. Llame al número de teléfono gratuito que aparece en su tarjeta de identificación. 請注意：如果您說中文 (Chinese)，我們免費為您提供語言協助服務。請撥打會員卡所列的免付費會員電話號碼</p>
+       </td>
+      </tr>
+     </table>
+     <table align="center" bgcolor="FFFFFF" border="0" cellpadding="0" cellspacing="0" class="width320" role="presentation" style="background: #FFFFFF; width: 640px;" width="640">
+      <tr>
+       <td style="padding-bottom: 50px; padding-left: 20px; padding-right: 20px; padding-top: 25px;">
+        <p style="color: #636363; font-family: Arial, sans-serif; font-size: 11px; line-height: 18px; margin-bottom: 15px; margin-top: 0px; text-align: center;">
+         This email was sent by:<br />
+         %%[ IF not Empty(@ADDRESS1) then ]%%
+         %%=v(@ADDRESS1)=%%<br />
+         %%[ ELSE ]%%
+         Optum<br />
+         %%[ ENDIF ]%%
+         %%[ IF not Empty(@ADDRESS2) then ]%%
+         %%=v(@ADDRESS2)=%%<br />
+         %%[ ELSE ]%%
+         11000 Optum Circle<br />
+         %%[ ENDIF ]%%
+         %%[ IF not Empty(@ADDRESS3) then ]%%
+         %%=v(@ADDRESS3)=%%<br />
+         %%[ ELSE ]%%
+         Eden Prairie, MN 55344<br />
+         %%[ ENDIF ]%%
+         &copy;2022 Optum, Inc. All rights reserved.<br />
+         WF6330749 216442-012022</p>
+        <p style="color: #636363; font-family: Arial, sans-serif; font-size: 11px; line-height: 18px; margin-bottom: 15px; margin-top: 0px; text-align: center;"><a href="%%=RedirectTo(CloudPagesURL(1014))=%%" style="color: #316BBE; text-decoration: underline; white-space: nowrap;" target="_blank">Preference&nbsp;Center</a>&nbsp; |&nbsp; <a href="%%=RedirectTo(CloudPagesURL(1014))=%%" style="color: #316BBE; text-decoration: underline;" target="_blank">Unsubscribe</a>&nbsp; |&nbsp; <a href="https://www.optum.com/privacy-policy.html" style="color: #316BBE; text-decoration: underline; white-space: nowrap;" target="_blank">Privacy&nbsp;Policy</a></p>
+        <p style="color: #636363; font-family: Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px; text-align: center;">Please do not reply to this email address; this mailbox is used for outbound email only.</p>
+       </td>
+      </tr>
+     </table>
+    </td>
+   </tr>
+  </table>
+  <custom name="opencounter" type="tracking"/>
+ </body>
+</html>
