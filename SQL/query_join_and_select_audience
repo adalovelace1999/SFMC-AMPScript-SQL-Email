@@ -1,6 +1,9 @@
+/* Selects non-duplicate records from the cs DE  based on the "Email" field and stores them as "Email" in the new DE*/
 SELECT DISTINCT(cs.Email) as Email,
+/* Selects the following columns from the cms DE*/
     cms.Id,
     cms.CampaignId,
+/* Selects the following columns from the cms DE as the field name that follows "as" */
     cms.DMG_MemberType__c  as ContactType,
     cms.Description as CampaignDescription,
     cms.LeadOrContactId,
@@ -8,11 +11,12 @@ SELECT DISTINCT(cs.Email) as Email,
     cms.FirstName,
     cms.LastName,
     cms.Comments__c,
+/* This line is commented out to allow "Payor" to be selected or not selected */
  /*   cs.Payor,   */
+/* Selects the following 2 fields from the cs DE */
     cs.Email_Opt_In__c,
-    /*to join from contact*/
     cs.Market__c,
-    /*from campaign member*/
+/* Selects the following 2 fields from the cms DE */
     cms.CDO__c,
     cms.Attribute1__c,
     cms.Attribute2__c,
@@ -24,12 +28,14 @@ SELECT DISTINCT(cs.Email) as Email,
     cms.Attribute8__c,
     cms.Attribute9__c,
     cms.Attribute10__c,
+/* Selects specific values for the following fields for all records */
     '142572-122023' as Attribute11__c,
     '142593-122023' as Attribute12__c,
     '142604-122023' as Attribute13__c,
     '142615-122023' as Attribute14__c
 
 FROM
+/* Selects specific values for the following fields for all records */
     Ent.CampaignMember_Salesforce_3 cms
 
 LEFT JOIN Ent.Contact_Salesforce_8 cs ON cs.Id = cms.ContactId
